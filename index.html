@@ -1,10 +1,405 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BCAVG</title>
-  <style>html,body{margin:0;min-height:100%;background:#fff}</style>
-</head>
-<body></body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Project page for Behavior-Conditioned Animal Vocalization Generation and the BeVo dataset."
+    />
+    <meta name="theme-color" content="#071d2b" />
+    <title>BeVo — Behavior-Conditioned Animal Vocalization Generation</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css?v=4c5f689" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header" data-header>
+      <div class="nav-shell">
+        <a class="brand" href="#top" aria-label="BeVo home">
+          <span class="brand-mark" aria-hidden="true">
+            <i></i><i></i><i></i><i></i><i></i>
+          </span>
+          <span>BEVO</span>
+          <small>paper demo</small>
+        </a>
+
+        <nav class="desktop-nav" aria-label="Primary navigation">
+          <a href="#listen">Listen</a>
+          <a href="#dataset">Dataset</a>
+          <a href="#method">Method</a>
+          <a href="#results">Results</a>
+          <a href="#citation">Citation</a>
+        </nav>
+
+        <div class="resource-nav" aria-label="Project resources">
+          <span class="resource-pending" title="Paper link will be added later">Paper</span>
+          <span class="resource-pending" title="Code link will be added later">Code</span>
+        </div>
+
+        <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu">
+          <span></span><span></span>
+          <span class="sr-only">Open navigation</span>
+        </button>
+      </div>
+      <nav id="mobile-menu" class="mobile-nav" aria-label="Mobile navigation" hidden>
+        <a href="#listen">Listen</a>
+        <a href="#dataset">Dataset</a>
+        <a href="#method">Method</a>
+        <a href="#results">Results</a>
+        <a href="#citation">Citation</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section id="top" class="hero section-shell">
+        <div class="hero-meta-line">
+          <p class="eyebrow"><span></span> Research project · Bioacoustics</p>
+          <p>Project page / 2026</p>
+        </div>
+
+        <div class="hero-copy">
+          <h1>
+            <span>Behavior-Conditioned</span>
+            <em>Animal Vocalization Generation</em>
+          </h1>
+
+          <div class="hero-deck">
+            <p class="hero-summary">
+              Generating short, duration-variable animal vocalizations from natural-language descriptions of
+              behaviors, social interactions, and contexts.
+            </p>
+            <ol class="hero-contributions" aria-label="Main contributions">
+              <li><span>01</span>BeVo dataset</li>
+              <li><span>02</span>Event-Aware generation</li>
+              <li><span>03</span>Multidimensional evaluation</li>
+            </ol>
+          </div>
+
+          <div class="hero-footer">
+            <div class="authors" aria-label="Authors">
+              <p>Xinlong Deng<sup>1*</sup>, Yong Tian<sup>1*</sup>, Jian Guan<sup>2</sup>, Jie Jiang<sup>1</sup>, Yin Cao<sup>3</sup></p>
+              <p class="affiliations">
+                <span><sup>1</sup>China University of Petroleum, Beijing</span>
+                <span><sup>2</sup>Harbin Engineering University</span>
+                <span><sup>3</sup>Institute of Acoustics, Chinese Academy of Sciences</span>
+              </p>
+              <p class="equal-note">* Equal contribution</p>
+            </div>
+
+            <div class="hero-actions" aria-label="Project links">
+              <button class="button button-primary" type="button" disabled>Paper <span>Soon</span></button>
+              <button class="button button-secondary" type="button" disabled>Code <span>Soon</span></button>
+              <button class="button button-secondary" type="button" disabled>Dataset <span>Soon</span></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="species-rail" aria-label="Six species represented in BeVo">
+          <span style="--species: #456fd6">Hyena</span>
+          <span style="--species: #d5b600">Meerkat</span>
+          <span style="--species: #28a56e">Marmoset</span>
+          <span style="--species: #76528a">Goat</span>
+          <span style="--species: #e66d2e">Zebra</span>
+          <span style="--species: #9f302a">Zebra Finch</span>
+        </div>
+      </section>
+
+      <section class="stats-band" aria-label="Dataset summary">
+        <div class="section-shell stats-grid">
+          <div><strong>6</strong><span>species</span></div>
+          <div><strong>31,191</strong><span>vocalization events</span></div>
+          <div><strong>42</strong><span>vocalization anchors</span></div>
+          <div><strong>524.3</strong><span>minutes of audio</span></div>
+        </div>
+      </section>
+
+      <section id="listen" class="content-section section-shell">
+        <header class="section-heading">
+          <p class="section-index">01 / LISTEN</p>
+          <div>
+            <h2>Listen by behavior</h2>
+            <p>
+              Select a species, read its literature-grounded behavioral condition, and compare the real
+              reference with generated vocalizations. Audio samples will be added in the next content pass.
+            </p>
+          </div>
+        </header>
+
+        <div class="demo-surface">
+          <div class="species-tabs" role="tablist" aria-label="Choose an animal species">
+            <button type="button" role="tab" aria-selected="true" data-species="hyena">Hyena</button>
+            <button type="button" role="tab" aria-selected="false" data-species="meerkat">Meerkat</button>
+            <button type="button" role="tab" aria-selected="false" data-species="marmoset">Marmoset</button>
+            <button type="button" role="tab" aria-selected="false" data-species="goat">Goat</button>
+            <button type="button" role="tab" aria-selected="false" data-species="zebra">Zebra</button>
+            <button type="button" role="tab" aria-selected="false" data-species="zebra-finch">Zebra Finch</button>
+          </div>
+
+          <div class="sample-context">
+            <div>
+              <p class="context-label">Behavioral condition</p>
+              <p class="prompt-placeholder" data-prompt>Add a literature-grounded hyena behavior condition here.</p>
+            </div>
+            <dl>
+              <div><dt>Species</dt><dd data-species-name>Spotted hyena</dd></div>
+              <div><dt>Anchor</dt><dd>To be added</dd></div>
+              <div><dt>Duration</dt><dd>To be added</dd></div>
+            </dl>
+          </div>
+
+          <div class="audio-comparison" aria-label="Primary audio comparison">
+            <article class="audio-card reference-card">
+              <div class="audio-card-head">
+                <div><span class="model-code">A / REFERENCE</span><h3>Real vocalization</h3></div>
+                <span class="status-chip">Awaiting audio</span>
+              </div>
+              <div class="player-placeholder" aria-label="Real audio placeholder">
+                <button type="button" disabled aria-label="Real audio not yet available">▶</button>
+                <div class="wave-placeholder" aria-hidden="true"></div>
+                <time>--:--</time>
+              </div>
+            </article>
+
+            <article class="audio-card proposed-card">
+              <div class="audio-card-head">
+                <div><span class="model-code">B / PROPOSED</span><h3>TangoFlux Event-Aware</h3></div>
+                <span class="status-chip">Awaiting audio</span>
+              </div>
+              <div class="player-placeholder" aria-label="Event-Aware generated audio placeholder">
+                <button type="button" disabled aria-label="Generated audio not yet available">▶</button>
+                <div class="wave-placeholder" aria-hidden="true"></div>
+                <time>--:--</time>
+              </div>
+            </article>
+          </div>
+
+          <details class="baseline-comparison">
+            <summary>
+              <span>Compare all systems</span>
+              <small>Zero-shot and standard fine-tuning</small>
+            </summary>
+            <div class="audio-comparison secondary-comparison">
+              <article class="audio-card">
+                <div class="audio-card-head">
+                  <div><span class="model-code">C / BASELINE</span><h3>TangoFlux Zero-shot</h3></div>
+                  <span class="status-chip">Awaiting audio</span>
+                </div>
+                <div class="player-placeholder">
+                  <button type="button" disabled aria-label="Zero-shot audio not yet available">▶</button>
+                  <div class="wave-placeholder" aria-hidden="true"></div><time>--:--</time>
+                </div>
+              </article>
+              <article class="audio-card">
+                <div class="audio-card-head">
+                  <div><span class="model-code">D / BASELINE</span><h3>TangoFlux Fine-tuned</h3></div>
+                  <span class="status-chip">Awaiting audio</span>
+                </div>
+                <div class="player-placeholder">
+                  <button type="button" disabled aria-label="Fine-tuned audio not yet available">▶</button>
+                  <div class="wave-placeholder" aria-hidden="true"></div><time>--:--</time>
+                </div>
+              </article>
+            </div>
+          </details>
+        </div>
+
+        <aside class="interpretation-note">
+          <span>Interpretation note</span>
+          <p>
+            Behavioral conditions are associated with groups of recordings through vocalization anchors.
+            The demo therefore illustrates anchor-level conditional response, not direct behavioral understanding
+            of an individual recording.
+          </p>
+        </aside>
+      </section>
+
+      <section id="about" class="content-section section-shell overview-section">
+        <header class="section-heading compact-heading">
+          <p class="section-index">02 / OVERVIEW</p>
+          <div><h2>From field annotations to conditioned generation</h2></div>
+        </header>
+
+        <div class="abstract-layout">
+          <div class="abstract-copy">
+            <p class="lead-paragraph">
+              Behavior-conditioned animal vocalization generation aims to synthesize vocalizations from
+              natural-language descriptions of animal behaviors, social interactions, and contexts.
+            </p>
+            <p>
+              We establish a pipeline spanning data construction, generation, and evaluation. Public bioacoustic
+              data from six species is linked with species-specific ethological and bioacoustic literature to form
+              natural-language behavioral conditions. A rectified-flow generator is then adapted with Event-Aware
+              variable-length modeling for short, duration-variable vocalizations.
+            </p>
+          </div>
+          <div class="contribution-list">
+            <article><span>01</span><h3>BeVo dataset</h3><p>Literature-grounded behavioral conditions linked to public bioacoustic recordings.</p></article>
+            <article><span>02</span><h3>Event-Aware modeling</h3><p>Actual-duration encoding with masked padded latent positions.</p></article>
+            <article><span>03</span><h3>Multidimensional evaluation</h3><p>Discriminability, acoustic fidelity, and language-aligned representation fidelity.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="dataset" class="content-section section-shell">
+        <header class="section-heading">
+          <p class="section-index">03 / DATASET</p>
+          <div>
+            <h2>The BeVo Dataset</h2>
+            <p>
+              A standardized collection of vocalization events connected to literature-grounded behavior cards
+              through 42 species-specific vocalization anchors.
+            </p>
+          </div>
+        </header>
+
+        <figure class="figure-card dataset-figure">
+          <img src="assets/dataset-overview.png" alt="Overview of the BeVo dataset construction pipeline" />
+          <figcaption><span>Figure 1</span> Overview of the BeVo Dataset.</figcaption>
+        </figure>
+
+        <div class="species-inventory" aria-label="Species represented in BeVo">
+          <article style="--species: #456fd6"><span>01</span><h3>Spotted hyena</h3><p>12,242 events</p></article>
+          <article style="--species: #e3ce28"><span>02</span><h3>Meerkat</h3><p>5,639 events</p></article>
+          <article style="--species: #39c985"><span>03</span><h3>Common marmoset</h3><p>6,000 events</p></article>
+          <article style="--species: #4c2c5f"><span>04</span><h3>Goat</h3><p>3,586 events</p></article>
+          <article style="--species: #f17a2c"><span>05</span><h3>Plains zebra</h3><p>615 events</p></article>
+          <article style="--species: #8e1d19"><span>06</span><h3>Zebra finch</h3><p>3,109 events</p></article>
+        </div>
+      </section>
+
+      <section id="method" class="content-section dark-section">
+        <div class="section-shell">
+          <header class="section-heading inverse-heading">
+            <p class="section-index">04 / METHOD</p>
+            <div>
+              <h2>Event-Aware variable-length modeling</h2>
+              <p>
+                Short animal vocalizations are encoded at their actual durations so that padded positions neither
+                act as valid context nor contribute to the rectified-flow objective.
+              </p>
+            </div>
+          </header>
+
+          <div class="method-layout">
+            <figure class="method-figure">
+              <img src="assets/event-aware.png" alt="Event-Aware latent modeling pipeline" />
+              <figcaption>Actual-duration waveform encoding and masked latent flow.</figcaption>
+            </figure>
+            <ol class="method-steps">
+              <li><span>01</span><div><h3>Encode actual duration</h3><p>Each vocalization is independently encoded with only the padding needed for VAE hop alignment.</p></div></li>
+              <li><span>02</span><div><h3>Pad within the minibatch</h3><p>Variable-length latent sequences are padded only to the longest event in the current batch.</p></div></li>
+              <li><span>03</span><div><h3>Mask attention and loss</h3><p>Padding is excluded from transformer context and rectified-flow optimization.</p></div></li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section id="results" class="content-section section-shell">
+        <header class="section-heading">
+          <p class="section-index">05 / RESULTS</p>
+          <div>
+            <h2>Results at a glance</h2>
+            <p>
+              Task-specific adaptation improves all evaluated metrics. Event-Aware modeling further improves
+              vocalization discriminability and acoustic fidelity over standard fine-tuning.
+            </p>
+          </div>
+        </header>
+
+        <div class="metric-grid">
+          <article><p>Macro accuracy <span>↑</span></p><strong>61.99%</strong><small>59.86% fine-tuned</small></article>
+          <article><p>FAD <span>↓</span></p><strong>1.2239</strong><small>1.4047 fine-tuned</small></article>
+          <article><p>AFDD <span>↓</span></p><strong>0.9206</strong><small>1.2480 fine-tuned</small></article>
+          <article><p>Behavior-swap increase</p><strong>85.39%</strong><small>Δp target +0.3139</small></article>
+        </div>
+
+        <div class="results-grid">
+          <div class="table-card">
+            <div class="card-title"><span>Overall evaluation</span><small>↑ higher is better · ↓ lower is better</small></div>
+            <div class="table-scroll">
+              <table>
+                <thead>
+                  <tr><th>System</th><th>Macro Acc. ↑</th><th>mAP ↑</th><th>FAD ↓</th><th>AFDD ↓</th></tr>
+                </thead>
+                <tbody>
+                  <tr><th>TangoFlux Zero-shot</th><td>0.1787</td><td>0.2022</td><td>6.7080</td><td>3.4759</td></tr>
+                  <tr><th>TangoFlux Fine-tuned</th><td>0.5986</td><td>0.6345</td><td>1.4047</td><td>1.2480</td></tr>
+                  <tr class="highlight-row"><th>TangoFlux Event-Aware</th><td>0.6199</td><td>0.6551</td><td>1.2239</td><td>0.9206</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <aside class="conditioning-card">
+            <p class="card-kicker">Conditioning analysis</p>
+            <h3>Behavior changes the conditional response.</h3>
+            <div class="mini-comparison">
+              <div><span>Full condition</span><strong>.6199</strong><small>accuracy</small></div>
+              <div><span>Species only</span><strong>.2261</strong><small>accuracy</small></div>
+            </div>
+            <p>
+              Replacing a condition with one from another anchor of the same species shifts predictions toward
+              the new target anchor.
+            </p>
+          </aside>
+        </div>
+
+        <figure class="figure-card embedding-figure">
+          <div class="figure-copy">
+            <p class="card-kicker">Representation analysis</p>
+            <h3>Real and generated vocalizations share broad species-level organization.</h3>
+            <p>
+              A joint t-SNE visualization of AnimalCLAP embeddings uses circles for real samples and triangles
+              for generated samples.
+            </p>
+          </div>
+          <img src="assets/animalclap_tsne.png" alt="t-SNE of real and generated vocalizations in AnimalCLAP space" />
+          <figcaption><span>Figure 3</span> AnimalCLAP representation space.</figcaption>
+        </figure>
+      </section>
+
+      <section id="limitations" class="content-section section-shell limitations-section">
+        <header class="section-heading compact-heading">
+          <p class="section-index">06 / SCOPE</p>
+          <div><h2>What this demo shows</h2></div>
+        </header>
+        <div class="scope-grid">
+          <article><span>01</span><h3>Associated conditions</h3><p>Behavioral conditions describe groups of recordings sharing a vocalization anchor, not verified behavior for each event.</p></article>
+          <article><span>02</span><h3>Linguistic generalization</h3><p>Evaluation uses new formulations of behavioral knowledge represented during training, not entirely unseen behaviors.</p></article>
+          <article><span>03</span><h3>Distribution-level fidelity</h3><p>CLAP-FAD measures species-wise distribution fidelity in language-aligned spaces, not sample-wise prompt correctness.</p></article>
+        </div>
+      </section>
+
+      <section id="citation" class="content-section citation-section">
+        <div class="section-shell citation-layout">
+          <div>
+            <p class="section-index">07 / CITATION</p>
+            <h2>Cite this work</h2>
+            <p>The final venue, paper URL, and BibTeX entry can be updated once available.</p>
+          </div>
+          <div class="citation-card">
+            <button type="button" class="copy-button" data-copy-citation>Copy BibTeX</button>
+            <pre><code data-citation>@article{deng2026bevo,
+  title   = {Behavior-Conditioned Animal Vocalization Generation},
+  author  = {Deng, Xinlong and Tian, Yong and Guan, Jian and Jiang, Jie and Cao, Yin},
+  year    = {2026},
+  note    = {Manuscript}
+}</code></pre>
+            <p class="copy-status" role="status" aria-live="polite" data-copy-status></p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="section-shell footer-grid">
+        <div><strong>BEVO</strong><p>Behavior-Conditioned Animal Vocalization Generation</p></div>
+        <p>Research project page · 2026</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>
