@@ -10,7 +10,7 @@
     <meta name="theme-color" content="#071d2b" />
     <title>BeVo — Behavior-Conditioned Animal Vocalization Generation</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="styles.css?v=20260930-audio-v2" />
+    <link rel="stylesheet" href="styles.css?v=20260930-audio-v3" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -121,8 +121,8 @@
           <div>
             <h2>Listen by behavior</h2>
             <p>
-              Choose a species to hear one generated example and read the exact prompt used for that sample.
-              Matched real recordings and other model outputs will be added when available.
+              Choose a species to read its exact generation prompt. The playable fine-tuned example is
+              shown below; matched real recordings and other model outputs are still awaiting audio.
             </p>
           </div>
         </header>
@@ -155,11 +155,7 @@
                 <div><span class="model-code">A / REFERENCE</span><h3>Real vocalization</h3></div>
                 <span class="status-chip">Awaiting audio</span>
               </div>
-              <div class="player-placeholder" aria-label="Real audio placeholder">
-                <button type="button" disabled aria-label="Real audio not yet available">▶</button>
-                <div class="wave-placeholder" aria-hidden="true"></div>
-                <time>--:--</time>
-              </div>
+              <div class="player-unavailable">Real recording not yet supplied.</div>
             </article>
 
             <article class="audio-card proposed-card">
@@ -167,18 +163,14 @@
                 <div><span class="model-code">B / PROPOSED</span><h3>TangoFlux Event-Aware</h3></div>
                 <span class="status-chip">Awaiting audio</span>
               </div>
-              <div class="player-placeholder" aria-label="Event-Aware generated audio placeholder">
-                <button type="button" disabled aria-label="Generated audio not yet available">▶</button>
-                <div class="wave-placeholder" aria-hidden="true"></div>
-                <time>--:--</time>
-              </div>
+              <div class="player-unavailable">Event-Aware output not yet supplied.</div>
             </article>
           </div>
 
-          <details class="baseline-comparison">
+          <details class="baseline-comparison" open>
             <summary>
               <span>Compare all systems</span>
-              <small>Zero-shot and standard fine-tuning</small>
+              <small>Fine-tuned audio is playable below</small>
             </summary>
             <div class="audio-comparison secondary-comparison">
               <article class="audio-card">
@@ -186,10 +178,7 @@
                   <div><span class="model-code">C / BASELINE</span><h3>TangoFlux Zero-shot</h3></div>
                   <span class="status-chip">Awaiting audio</span>
                 </div>
-                <div class="player-placeholder">
-                  <button type="button" disabled aria-label="Zero-shot audio not yet available">▶</button>
-                  <div class="wave-placeholder" aria-hidden="true"></div><time>--:--</time>
-                </div>
+                <div class="player-unavailable">Zero-shot output not yet supplied.</div>
               </article>
               <article class="audio-card">
                 <div class="audio-card-head">
@@ -397,6 +386,6 @@
       </div>
     </footer>
 
-    <script src="script.js?v=20260930-audio-v2"></script>
+    <script src="script.js?v=20260930-audio-v3"></script>
   </body>
 </html>
