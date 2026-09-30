@@ -141,7 +141,6 @@
             <div>
               <p class="context-label">Generation prompt · exact manifest text</p>
               <p class="prompt-placeholder" data-prompt>A vocalization is heard from a spotted hyena when it seeks distant clan contact.</p>
-              <p class="sample-source">Source sample: <span data-sample-id>whoop_sample_1009.wav</span></p>
             </div>
             <dl>
               <div><dt>Species</dt><dd data-species-name>Spotted hyena</dd></div>
@@ -151,16 +150,19 @@
           </div>
 
           <div class="audio-comparison" aria-label="Primary audio comparison">
-            <article class="audio-card proposed-card">
+            <article class="audio-card reference-card">
               <div class="audio-card-head">
-                <div><span class="model-code">A / GENERATED EXAMPLE</span><h3>TangoFlux Fine-tuned</h3></div>
-                <span class="status-chip status-ready">Listen now</span>
+                <div><span class="model-code">A / REFERENCE</span><h3>Real vocalization</h3></div>
+                <span class="status-chip">Awaiting audio</span>
               </div>
-              <audio class="sample-player" controls preload="metadata" data-generated-audio src="audio/hyena-whoop-generated.wav" aria-label="Generated spotted hyena vocalization"></audio>
-              <p class="audio-caption">Generated with the fine-tuned TangoFlux checkpoint in the supplied test inference output.</p>
+              <div class="player-placeholder" aria-label="Real audio placeholder">
+                <button type="button" disabled aria-label="Real audio not yet available">▶</button>
+                <div class="wave-placeholder" aria-hidden="true"></div>
+                <time>--:--</time>
+              </div>
             </article>
 
-            <article class="audio-card reference-card">
+            <article class="audio-card proposed-card">
               <div class="audio-card-head">
                 <div><span class="model-code">B / PROPOSED</span><h3>TangoFlux Event-Aware</h3></div>
                 <span class="status-chip">Awaiting audio</span>
@@ -175,29 +177,26 @@
 
           <details class="baseline-comparison">
             <summary>
-              <span>Other comparison audio</span>
-              <small>Real reference and zero-shot samples to come</small>
+              <span>Compare all systems</span>
+              <small>Zero-shot and standard fine-tuning</small>
             </summary>
             <div class="audio-comparison secondary-comparison">
               <article class="audio-card">
                 <div class="audio-card-head">
-                  <div><span class="model-code">C / REFERENCE</span><h3>Real vocalization</h3></div>
-                  <span class="status-chip">Awaiting audio</span>
-                </div>
-                <div class="player-placeholder">
-                  <button type="button" disabled aria-label="Real audio not yet available">▶</button>
-                  <div class="wave-placeholder" aria-hidden="true"></div><time>--:--</time>
-                </div>
-              </article>
-              <article class="audio-card">
-                <div class="audio-card-head">
-                  <div><span class="model-code">D / BASELINE</span><h3>TangoFlux Zero-shot</h3></div>
+                  <div><span class="model-code">C / BASELINE</span><h3>TangoFlux Zero-shot</h3></div>
                   <span class="status-chip">Awaiting audio</span>
                 </div>
                 <div class="player-placeholder">
                   <button type="button" disabled aria-label="Zero-shot audio not yet available">▶</button>
                   <div class="wave-placeholder" aria-hidden="true"></div><time>--:--</time>
                 </div>
+              </article>
+              <article class="audio-card">
+                <div class="audio-card-head">
+                  <div><span class="model-code">D / BASELINE</span><h3>TangoFlux Fine-tuned</h3></div>
+                  <span class="status-chip status-ready">Listen now</span>
+                </div>
+                <audio class="sample-player" controls preload="metadata" data-generated-audio src="audio/hyena-whoop-generated.wav" aria-label="Generated spotted hyena vocalization"></audio>
               </article>
             </div>
           </details>

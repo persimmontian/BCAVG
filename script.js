@@ -36,7 +36,6 @@ const prompt = document.querySelector("[data-prompt]");
 const speciesName = document.querySelector("[data-species-name]");
 const anchor = document.querySelector("[data-anchor]");
 const duration = document.querySelector("[data-duration]");
-const sampleId = document.querySelector("[data-sample-id]");
 const generatedAudio = document.querySelector("[data-generated-audio]");
 
 tabs.forEach((tab) => {
@@ -47,7 +46,6 @@ tabs.forEach((tab) => {
     anchor.textContent = selected.anchor;
     duration.textContent = selected.duration;
     prompt.textContent = selected.prompt;
-    sampleId.textContent = selected.sample;
     generatedAudio.pause();
     generatedAudio.src = selected.audio;
     generatedAudio.setAttribute("aria-label", `Generated ${selected.name} vocalization`);

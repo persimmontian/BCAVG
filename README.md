@@ -6,7 +6,7 @@ Static project page for **Behavior-Conditioned Animal Vocalization Generation**.
 
 - Paper title, authors, affiliations, abstract summary, dataset statistics, method summary, and reported results are included.
 - The supplied dataset overview, Event-Aware modeling figure, and AnimalCLAP t-SNE figure are included.
-- Six playable fine-tuned baseline examples are included, one per species. Each tab shows the exact generation prompt, vocalization anchor, source sample filename, and duration from `cache/test_audio_manifest.json` in the supplied local project.
+- Six playable fine-tuned baseline examples are included in the original "Compare all systems" panel, one per species. Each tab shows the exact generation prompt, vocalization anchor, and duration from `cache/test_audio_manifest.json` in the supplied local project. Source sample filenames are recorded in `script.js`.
 - The source inference files were converted from 44.1 kHz float WAV to 16-bit PCM WAV for browser playback. They are fine-tuned TangoFlux outputs from `outputs/test_inference`, not Event-Aware outputs.
 - Matched real, Event-Aware, and zero-shot audio, along with paper/code/dataset links, are still awaiting source material.
 
