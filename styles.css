@@ -384,7 +384,7 @@ sup { font-size: 0.62em; line-height: 0; }
 .audio-card h3 { margin: 5px 0 0; font-size: 1rem; font-weight: 700; }
 .status-chip { flex: none; padding: 4px 8px; color: #6e7e79; background: white; border: 1px solid var(--line); border-radius: 999px; font-size: 0.75rem; font-weight: 700; }
 .status-ready { color: var(--green-dark); border-color: #a7d3c7; }
-.sample-player { display: block; width: 100%; max-width: 500px; height: 48px; margin-top: 24px; }
+.sample-player { display: block; width: 100%; max-width: 500px; height: 48px; margin-top: 24px; } .player-unavailable { display: flex; align-items: center; min-height: 48px; margin-top: 24px; color: #72837d; font-size: 0.82rem; }
 .player-placeholder {
   margin-top: 25px;
   display: grid;
