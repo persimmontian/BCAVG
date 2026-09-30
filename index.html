@@ -10,7 +10,7 @@
     <meta name="theme-color" content="#071d2b" />
     <title>BeVo — Behavior-Conditioned Animal Vocalization Generation</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="styles.css?v=4c5f689" />
+    <link rel="stylesheet" href="styles.css?v=20260930-audio" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -121,8 +121,8 @@
           <div>
             <h2>Listen by behavior</h2>
             <p>
-              Select a species, read its literature-grounded behavioral condition, and compare the real
-              reference with generated vocalizations. Audio samples will be added in the next content pass.
+              Choose a species to hear one generated example and read the exact prompt used for that sample.
+              Matched real recordings and other model outputs will be added when available.
             </p>
           </div>
         </header>
@@ -139,30 +139,28 @@
 
           <div class="sample-context">
             <div>
-              <p class="context-label">Behavioral condition</p>
-              <p class="prompt-placeholder" data-prompt>Add a literature-grounded hyena behavior condition here.</p>
+              <p class="context-label">Generation prompt · exact manifest text</p>
+              <p class="prompt-placeholder" data-prompt>A vocalization is heard from a spotted hyena when it seeks distant clan contact.</p>
+              <p class="sample-source">Source sample: <span data-sample-id>whoop_sample_1009.wav</span></p>
             </div>
             <dl>
               <div><dt>Species</dt><dd data-species-name>Spotted hyena</dd></div>
-              <div><dt>Anchor</dt><dd>To be added</dd></div>
-              <div><dt>Duration</dt><dd>To be added</dd></div>
+              <div><dt>Anchor</dt><dd data-anchor>Whoop</dd></div>
+              <div><dt>Duration</dt><dd data-duration>1.78 s</dd></div>
             </dl>
           </div>
 
           <div class="audio-comparison" aria-label="Primary audio comparison">
-            <article class="audio-card reference-card">
+            <article class="audio-card proposed-card">
               <div class="audio-card-head">
-                <div><span class="model-code">A / REFERENCE</span><h3>Real vocalization</h3></div>
-                <span class="status-chip">Awaiting audio</span>
+                <div><span class="model-code">A / GENERATED EXAMPLE</span><h3>TangoFlux Fine-tuned</h3></div>
+                <span class="status-chip status-ready">Listen now</span>
               </div>
-              <div class="player-placeholder" aria-label="Real audio placeholder">
-                <button type="button" disabled aria-label="Real audio not yet available">▶</button>
-                <div class="wave-placeholder" aria-hidden="true"></div>
-                <time>--:--</time>
-              </div>
+              <audio class="sample-player" controls preload="metadata" data-generated-audio src="audio/hyena-whoop-generated.wav" aria-label="Generated spotted hyena vocalization"></audio>
+              <p class="audio-caption">Generated with the fine-tuned TangoFlux checkpoint in the supplied test inference output.</p>
             </article>
 
-            <article class="audio-card proposed-card">
+            <article class="audio-card reference-card">
               <div class="audio-card-head">
                 <div><span class="model-code">B / PROPOSED</span><h3>TangoFlux Event-Aware</h3></div>
                 <span class="status-chip">Awaiting audio</span>
@@ -177,27 +175,27 @@
 
           <details class="baseline-comparison">
             <summary>
-              <span>Compare all systems</span>
-              <small>Zero-shot and standard fine-tuning</small>
+              <span>Other comparison audio</span>
+              <small>Real reference and zero-shot samples to come</small>
             </summary>
             <div class="audio-comparison secondary-comparison">
               <article class="audio-card">
                 <div class="audio-card-head">
-                  <div><span class="model-code">C / BASELINE</span><h3>TangoFlux Zero-shot</h3></div>
+                  <div><span class="model-code">C / REFERENCE</span><h3>Real vocalization</h3></div>
                   <span class="status-chip">Awaiting audio</span>
                 </div>
                 <div class="player-placeholder">
-                  <button type="button" disabled aria-label="Zero-shot audio not yet available">▶</button>
+                  <button type="button" disabled aria-label="Real audio not yet available">▶</button>
                   <div class="wave-placeholder" aria-hidden="true"></div><time>--:--</time>
                 </div>
               </article>
               <article class="audio-card">
                 <div class="audio-card-head">
-                  <div><span class="model-code">D / BASELINE</span><h3>TangoFlux Fine-tuned</h3></div>
+                  <div><span class="model-code">D / BASELINE</span><h3>TangoFlux Zero-shot</h3></div>
                   <span class="status-chip">Awaiting audio</span>
                 </div>
                 <div class="player-placeholder">
-                  <button type="button" disabled aria-label="Fine-tuned audio not yet available">▶</button>
+                  <button type="button" disabled aria-label="Zero-shot audio not yet available">▶</button>
                   <div class="wave-placeholder" aria-hidden="true"></div><time>--:--</time>
                 </div>
               </article>
@@ -208,9 +206,9 @@
         <aside class="interpretation-note">
           <span>Interpretation note</span>
           <p>
-            Behavioral conditions are associated with groups of recordings through vocalization anchors.
-            The demo therefore illustrates anchor-level conditional response, not direct behavioral understanding
-            of an individual recording.
+            These six playable samples come from the fine-tuned baseline inference directory. They are not
+            Event-Aware outputs. Prompts are paired with files by the test audio manifest; behavioral conditions
+            describe a vocalization anchor, not verified behavior in an individual recording.
           </p>
         </aside>
       </section>
@@ -400,6 +398,6 @@
       </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=20260930-audio"></script>
   </body>
 </html>

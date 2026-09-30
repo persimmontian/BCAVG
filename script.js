@@ -1,22 +1,57 @@
 const species = {
-  hyena: { name: "Spotted hyena", short: "hyena" },
-  meerkat: { name: "Meerkat", short: "meerkat" },
-  marmoset: { name: "Common marmoset", short: "marmoset" },
-  goat: { name: "Domestic goat", short: "goat" },
-  zebra: { name: "Plains zebra", short: "zebra" },
-  "zebra-finch": { name: "Zebra finch", short: "zebra finch" },
+  hyena: {
+    name: "Spotted hyena", anchor: "Whoop", duration: "1.78 s",
+    prompt: "A vocalization is heard from a spotted hyena when it seeks distant clan contact.",
+    sample: "whoop_sample_1009.wav", audio: "audio/hyena-whoop-generated.wav",
+  },
+  meerkat: {
+    name: "Meerkat", anchor: "Alarm call", duration: "0.88 s",
+    prompt: "An animal sound comes from a warning meerkat when it watches for a predator.",
+    sample: "alarm_call_sample_408.wav", audio: "audio/meerkat-alarm-generated.wav",
+  },
+  marmoset: {
+    name: "Common marmoset", anchor: "Phee", duration: "2.15 s",
+    prompt: "An audible sound is heard when a marmoset reaches conspecifics outside sight.",
+    sample: "Phee_sample_1.wav", audio: "audio/marmoset-phee-generated.wav",
+  },
+  goat: {
+    name: "Domestic goat", anchor: "Mother-kid reunion", duration: "2.00 s",
+    prompt: "A sound occurs when a goat kid reaches its mother goat after separation.",
+    sample: "Mother-kid reunion_sample_0.wav", audio: "audio/goat-reunion-generated.wav",
+  },
+  zebra: {
+    name: "Plains zebra", anchor: "Quagga quagga", duration: "1.75 s",
+    prompt: "A vocal sound occurs while a separated plains zebra seeks contact.",
+    sample: "quagga quagga_sample_0.wav", audio: "audio/zebra-contact-generated.wav",
+  },
+  "zebra-finch": {
+    name: "Zebra finch", anchor: "Song", duration: "4.22 s",
+    prompt: "An animal sound is audible while an adult male zebra finch performs courtship.",
+    sample: "song_sample_1.wav", audio: "audio/zebra-finch-song-generated.wav",
+  },
 };
 
 const tabs = [...document.querySelectorAll("[data-species]")];
 const prompt = document.querySelector("[data-prompt]");
 const speciesName = document.querySelector("[data-species-name]");
+const anchor = document.querySelector("[data-anchor]");
+const duration = document.querySelector("[data-duration]");
+const sampleId = document.querySelector("[data-sample-id]");
+const generatedAudio = document.querySelector("[data-generated-audio]");
 
 tabs.forEach((tab) => {
   tab.addEventListener("click", () => {
     const selected = species[tab.dataset.species];
     tabs.forEach((candidate) => candidate.setAttribute("aria-selected", String(candidate === tab)));
     speciesName.textContent = selected.name;
-    prompt.textContent = `Add a literature-grounded ${selected.short} behavior condition here.`;
+    anchor.textContent = selected.anchor;
+    duration.textContent = selected.duration;
+    prompt.textContent = selected.prompt;
+    sampleId.textContent = selected.sample;
+    generatedAudio.pause();
+    generatedAudio.src = selected.audio;
+    generatedAudio.setAttribute("aria-label", `Generated ${selected.name} vocalization`);
+    generatedAudio.load();
   });
 });
 

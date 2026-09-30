@@ -371,6 +371,8 @@ sup { font-size: 0.62em; line-height: 0; }
 }
 .context-label { margin: 0 0 8px; color: #788782; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
 .prompt-placeholder { max-width: 720px; margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: 1.3rem; font-weight: 600; letter-spacing: -0.012em; line-height: 1.4; }
+.sample-source { margin: 12px 0 0; color: #70817a; font-size: 0.73rem; }
+.sample-source span { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; overflow-wrap: anywhere; }
 .sample-context dl { margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; align-self: center; }
 .sample-context dl div { padding-left: 12px; border-left: 2px solid var(--line); }
 .sample-context dt { color: #81908b; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; }
@@ -383,6 +385,9 @@ sup { font-size: 0.62em; line-height: 0; }
 .model-code { color: #74857f; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.13em; }
 .audio-card h3 { margin: 5px 0 0; font-size: 1rem; font-weight: 700; }
 .status-chip { flex: none; padding: 4px 8px; color: #6e7e79; background: white; border: 1px solid var(--line); border-radius: 999px; font-size: 0.75rem; font-weight: 700; }
+.status-ready { color: var(--green-dark); border-color: #a7d3c7; }
+.sample-player { display: block; width: 100%; max-width: 500px; height: 48px; margin-top: 24px; }
+.audio-caption { max-width: 500px; margin: 12px 0 0; color: #657a72; font-size: 0.76rem; line-height: 1.45; }
 .player-placeholder {
   margin-top: 25px;
   display: grid;
