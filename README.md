@@ -6,9 +6,10 @@ Static project page for **Behavior-Conditioned Animal Vocalization Generation**.
 
 - Paper title, authors, affiliations, abstract summary, dataset statistics, method summary, and reported results are included.
 - The supplied dataset overview, Event-Aware modeling figure, and AnimalCLAP t-SNE figure are included.
-- Six playable fine-tuned baseline examples are included in the original "Compare all systems" panel, one per species. Each tab shows the exact generation prompt, vocalization anchor, and duration from `cache/test_audio_manifest.json` in the supplied local project. Source sample filenames are recorded in `script.js`.
-- The source inference files were converted from 44.1 kHz float WAV to 16-bit PCM WAV for browser playback. They are fine-tuned TangoFlux outputs from `outputs/test_inference`, not Event-Aware outputs.
-- Matched real, Event-Aware, and zero-shot audio, along with paper/code/dataset links, are still awaiting source material.
+- The listening panel shows only real reference audio and the selected final Event-Aware model output. Both are clearly marked as awaiting audio until matching files are supplied.
+- Species tabs show provisional demonstration prompts and vocalization anchors. The final prompt-to-audio pairings must be confirmed before publication.
+- Earlier fine-tuned baseline WAV files remain in `audio/` as unused repository assets; they are not displayed or represented as final-model outputs.
+- Paper/code/dataset links are still awaiting source material.
 
 ## Preview locally
 
@@ -17,9 +18,9 @@ Serve the repository root with any static HTTP server. The site has no build ste
 ## Add audio later
 
 1. Put finalized audio files in `audio/`.
-2. Add each behavior prompt, anchor, duration, source filename, and audio URL to the species entry in `script.js`.
-3. Add matched real and Event-Aware files to the comparison cards in `index.html` once they are provided.
-4. Keep each compared system on the same prompt-duration pair.
+2. Confirm each demonstration prompt and vocalization anchor in `script.js` against the selected final-model output.
+3. Add the matched real-reference and final Event-Aware audio URLs to the two cards in `index.html` and connect them to the species tabs in `script.js`.
+4. Keep the pairing scientifically accurate: the real recording should match species and vocalization type, but must not be described as exhibiting a specific behavior unless that behavior is verified.
 
 Recommended filename pattern:
 
