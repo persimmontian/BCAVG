@@ -10,7 +10,7 @@
     <meta name="theme-color" content="#071d2b" />
     <title>BeVo — Behavior-Conditioned Animal Vocalization Generation</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="styles.css?v=20261004-two-audio-v1" />
+    <link rel="stylesheet" href="styles.css?v=20261004-anchors-v1" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -121,20 +121,31 @@
           <div>
             <h2>Listen by behavior</h2>
             <p>
-              Choose a species to compare a real test recording with its corresponding
-              final Event-Aware model output.
+              Explore 42 condition labels across six species. Choose a label to compare
+              a real test recording with its corresponding final Event-Aware model output.
             </p>
           </div>
         </header>
 
         <div class="demo-surface">
           <div class="species-tabs" role="tablist" aria-label="Choose an animal species">
-            <button type="button" role="tab" aria-selected="true" data-species="hyena">Hyena</button>
-            <button type="button" role="tab" aria-selected="false" data-species="meerkat">Meerkat</button>
-            <button type="button" role="tab" aria-selected="false" data-species="marmoset">Marmoset</button>
-            <button type="button" role="tab" aria-selected="false" data-species="goat">Goat</button>
-            <button type="button" role="tab" aria-selected="false" data-species="zebra">Zebra</button>
-            <button type="button" role="tab" aria-selected="false" data-species="zebra-finch">Zebra Finch</button>
+            <button id="species-hyena" type="button" role="tab" aria-selected="true" aria-controls="sample-panel" data-species="hyena">Hyena</button>
+            <button id="species-meerkat" type="button" role="tab" aria-selected="false" aria-controls="sample-panel" tabindex="-1" data-species="meerkat">Meerkat</button>
+            <button id="species-marmoset" type="button" role="tab" aria-selected="false" aria-controls="sample-panel" tabindex="-1" data-species="marmoset">Marmoset</button>
+            <button id="species-goat" type="button" role="tab" aria-selected="false" aria-controls="sample-panel" tabindex="-1" data-species="goat">Goat</button>
+            <button id="species-zebra" type="button" role="tab" aria-selected="false" aria-controls="sample-panel" tabindex="-1" data-species="zebra">Zebra</button>
+            <button id="species-zebra-finch" type="button" role="tab" aria-selected="false" aria-controls="sample-panel" tabindex="-1" data-species="zebra-finch">Zebra Finch</button>
+          </div>
+
+          <div id="sample-panel" role="tabpanel" aria-labelledby="species-hyena">
+          <div class="anchor-selector">
+            <div class="anchor-selector-head">
+              <p class="context-label">Condition label</p>
+              <span class="anchor-count" data-anchor-count>Choose a category</span>
+            </div>
+            <div class="anchor-buttons" role="group" aria-label="Choose a condition label" data-anchor-buttons>
+              <button type="button" aria-pressed="true" data-sample-id="whoop">Whoop</button>
+            </div>
           </div>
 
           <div class="sample-context">
@@ -145,7 +156,13 @@
             <dl>
               <div><dt>Species</dt><dd data-species-name>Spotted hyena</dd></div>
               <div><dt>Anchor</dt><dd data-anchor>Whoop</dd></div>
+              <div><dt>Real duration</dt><dd data-duration>—</dd></div>
             </dl>
+          </div>
+
+          <div class="comparison-tools" data-spectrogram-control hidden>
+            <p>Paired audio uses a shared playback gain. Spectrograms share axes and an amplitude reference.</p>
+            <button type="button" class="spectrogram-toggle" aria-expanded="true" aria-controls="reference-spectrum generated-spectrum" data-spectrogram-toggle>Hide spectrograms</button>
           </div>
 
           <div class="audio-comparison" aria-label="Primary audio comparison">
@@ -157,6 +174,13 @@
               <audio class="sample-player" data-reference-audio controls preload="metadata" src="audio/hyena-whoop-real.wav">
                 Your browser does not support audio playback.
               </audio>
+              <p class="audio-duration" data-reference-duration></p>
+              <figure id="reference-spectrum" class="sample-spectrogram" data-reference-spectrogram hidden>
+                <a data-reference-spectrogram-link target="_blank" rel="noopener" aria-label="Open real audio spectrogram at full size">
+                  <img data-reference-spectrogram-image alt="Spectrogram of the real test recording" width="960" height="420" decoding="async" />
+                </a>
+                <figcaption>Real test recording · spectrogram</figcaption>
+              </figure>
             </article>
 
             <article class="audio-card proposed-card">
@@ -167,16 +191,25 @@
               <audio class="sample-player" data-generated-audio controls preload="metadata" src="audio/hyena-whoop-generated.wav">
                 Your browser does not support audio playback.
               </audio>
+              <p class="audio-duration" data-generated-duration></p>
+              <figure id="generated-spectrum" class="sample-spectrogram" data-generated-spectrogram hidden>
+                <a data-generated-spectrogram-link target="_blank" rel="noopener" aria-label="Open generated audio spectrogram at full size">
+                  <img data-generated-spectrogram-image alt="Spectrogram of the final model output" width="960" height="420" decoding="async" />
+                </a>
+                <figcaption>Final model output · spectrogram</figcaption>
+              </figure>
             </article>
+          </div>
+          <p class="sr-only" role="status" aria-live="polite" data-sample-status></p>
           </div>
         </div>
 
         <aside class="interpretation-note">
           <span>Interpretation note</span>
           <p>
-            Each reference is the test recording associated with the generated sample's manifest entry.
-            The prompts describe behavior associated with the vocalization category, not behavior verified
-            in an individual recording. These generated examples are not yet curated as the best examples.
+            These matched test examples were curated for spectral resemblance. Prompts describe behavior
+            associated with each vocalization category; individual events are not behavior-verified.
+            Spectral similarity does not establish behavioral correctness.
           </p>
         </aside>
       </section>
@@ -366,6 +399,7 @@
       </div>
     </footer>
 
-    <script src="script.js?v=20261004-paired-audio-v1"></script>
+    <script src="samples.js?v=20261004-anchors-v1"></script>
+    <script src="script.js?v=20261004-anchors-v1"></script>
   </body>
 </html>

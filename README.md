@@ -6,36 +6,36 @@ Static project page for **Behavior-Conditioned Animal Vocalization Generation**.
 
 - Paper title, authors, affiliations, abstract summary, dataset statistics, method summary, and reported results are included.
 - The supplied dataset overview, Event-Aware modeling figure, and AnimalCLAP t-SNE figure are included.
-- The listening panel pairs six real test recordings with the corresponding final Event-Aware model outputs; both sides are playable.
-- Species tabs show the exact test-manifest prompts paired with these outputs. These six examples are representative current selections, not a curated "best of" set.
-- Generated WAV files in `audio/` are browser-compatible PCM copies of outputs from `outputs/test_inference`; the inference script uses the trained `outputs/all_animals/checkpoints/best.safetensors` checkpoint. The script's generic `finetuned_checkpoint` argument does not mean these are the separate fine-tuned baseline results in the paper's comparison table.
-- Real WAV files come from the corresponding paths under `last_data/test/`, not the training split. Five were copied without audio conversion; the zebra recording was converted from float WAV to 16-bit PCM WAV for browser compatibility.
+- The listening panel contains 42 matched test-recording/final-model pairs: hyena (8 condition labels), meerkat (6), marmoset (6), goat (8), zebra (4), and zebra finch (10).
+- Species and condition-label tabs show the selected sample's exact test-manifest prompt. There are only two systems: real reference and final Event-Aware generation, with no old-baseline listening slots.
+- Generated WAV files come from `outputs/test_inference`; the inference script uses the trained `outputs/all_animals/checkpoints/best.safetensors` checkpoint. Its generic `finetuned_checkpoint` argument does not mean these are the separate fine-tuned baseline results in the paper's comparison table.
+- Real WAV files come from the corresponding exact-ID paths under `last_data/test/`, not the training split. Both members of each pair are exported as browser-compatible PCM16 WAVs. The same gain is applied to both, bringing their joint sample peak to -3 dBFS for comfortable playback while preserving their relative level. Source files are unchanged; no cropping, time stretching, filtering, or independent normalization is applied.
+- Each playable file has a spectrogram (84 images). Within each pair, both plots use identical time/frequency axes, STFT settings, one shared amplitude reference, and an 80 dB color range. Frequency is logarithmic from 50 Hz to 22.05 kHz. Spectrograms describe the exported playback audio, not independently normalized images.
+- Samples are curated for spectral resemblance from 3,100 exact-ID candidate pairs, subject to silence, clipping, and level-gap checks. This showcase is not a random sample, a model-wide performance estimate, or proof of behavioral correctness.
 - Paper/code/dataset links are still awaiting source material.
 
 ## Preview locally
 
 Serve the repository root with any static HTTP server. The site has no build step and no third-party runtime dependency.
 
-## Audio pairing
+## Audio provenance and reproduction
 
-| Species | Test recording under `last_data/test/` | Site reference asset |
-| --- | --- | --- |
-| Hyena | `hyena/whoop/whoop_sample_1009.wav` | `audio/hyena-whoop-real.wav` |
-| Meerkat | `meerkat/alarm_call/alarm_call_sample_408.wav` | `audio/meerkat-alarm-real.wav` |
-| Marmoset | `marmoset/Phee/Phee_sample_1.wav` | `audio/marmoset-phee-real.wav` |
-| Goat | `goat/Mother-kid reunion/Mother-kid reunion_sample_0.wav` | `audio/goat-reunion-real.wav` |
-| Zebra | `zebra/quagga quagga/quagga quagga_sample_0.wav` | `audio/zebra-contact-real.wav` |
-| Zebra finch | `zebrafinch/song/song_sample_1.wav` | `audio/zebra-finch-song-real.wav` |
+`samples.js` is the browser catalog. `data/audio-curation.json` records exact source paths, prompts, the ranked shortlist for every label, selected asset paths/hashes, playback gain, and selection settings. The original six pairs remain in `audio/` only as a fallback for a missing catalog.
 
-Review whether these six current generated examples should remain or be replaced by curated final selections. A test recording matches its generated sample's species and vocalization type, but a behavioral prompt must not be presented as verified behavior in that individual recording.
+Condition labels include vocalization categories as well as behavioral contexts. A prompt describes a category-associated condition, not behavior independently verified in the particular reference recording. The page explicitly discloses the spectral-resemblance curation.
 
-Recommended filename pattern:
+The optional offline curation script requires NumPy, SciPy, SoundFile, Matplotlib, and Pillow. These are not website runtime dependencies.
 
-```text
-{species}_{anchor}_{sample-id}_{system}.wav
+```sh
+python scripts/curate_audio_demo.py analyze \
+  --manifest /Volumes/Untitled/tfab_baseline2/cache/test_audio_manifest.json \
+  --real-root /Volumes/Untitled/last_data/test \
+  --generated-root /Volumes/Untitled/tfab_baseline2/outputs/test_inference
+python scripts/curate_audio_demo.py build \
+  --manifest /Volumes/Untitled/tfab_baseline2/cache/test_audio_manifest.json \
+  --real-root /Volumes/Untitled/last_data/test \
+  --generated-root /Volumes/Untitled/tfab_baseline2/outputs/test_inference
 ```
-
-For example: `hyena_whoop_001_event-aware.wav`.
 
 ## GitHub Pages
 
