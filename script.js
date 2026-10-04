@@ -108,7 +108,8 @@ function updateSpectrograms() {
   if (spectrumControl) spectrumControl.hidden = !hasSpectrograms;
   spectrumFigures.forEach(({ figure, image, link, pathKey, description }) => {
     if (!figure || !image) return;
-    const path = selectedSample?.[pathKey];
+    const assetPath = selectedSample?.[pathKey];
+    const path = assetPath ? `${assetPath}?v=20261004-final-v2` : null;
     figure.hidden = !spectraVisible || !path;
     if (path) {
       if (image.getAttribute("src") !== path) image.src = path;

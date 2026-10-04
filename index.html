@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Project page for Behavior-Conditioned Animal Vocalization Generation and the BeVo dataset."
+      content="Behavior-Conditioned Animal Vocalization Generation: Event-Aware Modeling and Multidimensional Evaluation. Paper, BeVo dataset, and matched real/generated audio demos."
     />
     <meta name="theme-color" content="#071d2b" />
-    <title>BeVo — Behavior-Conditioned Animal Vocalization Generation</title>
+    <title>Behavior-Conditioned Animal Vocalization Generation: Event-Aware Modeling and Multidimensional Evaluation</title>
     <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="styles.css?v=20261004-anchors-v1" />
+    <link rel="stylesheet" href="styles.css?v=20261004-final-v2" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -34,8 +34,9 @@
         </nav>
 
         <div class="resource-nav" aria-label="Project resources">
-          <span class="resource-pending" title="Paper link will be added later">Paper</span>
+          <a class="resource-link" href="paper/BCAVG.pdf" target="_blank" rel="noopener">Paper</a>
           <span class="resource-pending" title="Code link will be added later">Code</span>
+          <a class="resource-link" href="https://huggingface.co/datasets/Xinghour/BeVo" target="_blank" rel="noopener">Dataset</a>
         </div>
 
         <button class="menu-button" type="button" aria-expanded="false" aria-controls="mobile-menu">
@@ -62,7 +63,8 @@
         <div class="hero-copy">
           <h1>
             <span>Behavior-Conditioned</span>
-            <em>Animal Vocalization Generation</em>
+            <span>Animal Vocalization Generation:</span>
+            <span class="hero-title-tail">Event-Aware Modeling and Multidimensional Evaluation</span>
           </h1>
 
           <div class="hero-deck">
@@ -79,19 +81,20 @@
 
           <div class="hero-footer">
             <div class="authors" aria-label="Authors">
-              <p>Xinlong Deng<sup>1*</sup>, Yong Tian<sup>1*</sup>, Jian Guan<sup>2</sup>, Jie Jiang<sup>1</sup>, Yin Cao<sup>3</sup></p>
+              <p>Xinlong Deng<sup>1*</sup>, Yong Tian<sup>1*</sup>, Jian Guan<sup>2</sup>, Qiuqiang Kong<sup>3</sup>, Jie Jiang<sup>1</sup>, Yin Cao<sup>4</sup></p>
               <p class="affiliations">
-                <span><sup>1</sup>China University of Petroleum, Beijing</span>
-                <span><sup>2</sup>Harbin Engineering University</span>
-                <span><sup>3</sup>Institute of Acoustics, Chinese Academy of Sciences</span>
+                <span><sup>1</sup>College of Artificial Intelligence, China University of Petroleum, Beijing</span>
+                <span><sup>2</sup>College of Computer Science and Technology, Harbin Engineering University, Harbin, China</span>
+                <span><sup>3</sup>Department of Electronic Engineering, The Chinese University of Hong Kong, Hong Kong, China</span>
+                <span><sup>4</sup>Institute of Acoustics, Chinese Academy of Sciences</span>
               </p>
               <p class="equal-note">* Equal contribution</p>
             </div>
 
             <div class="hero-actions" aria-label="Project links">
-              <button class="button button-primary" type="button" disabled>Paper <span>Soon</span></button>
+              <a class="button button-primary" href="paper/BCAVG.pdf" target="_blank" rel="noopener">Paper <span>PDF</span></a>
               <button class="button button-secondary" type="button" disabled>Code <span>Soon</span></button>
-              <button class="button button-secondary" type="button" disabled>Dataset <span>Soon</span></button>
+              <a class="button button-secondary" href="https://huggingface.co/datasets/Xinghour/BeVo" target="_blank" rel="noopener">Dataset <span>BeVo</span></a>
             </div>
           </div>
         </div>
@@ -161,7 +164,7 @@
           </div>
 
           <div class="comparison-tools" data-spectrogram-control hidden>
-            <p>Paired audio uses a shared playback gain. Spectrograms share axes and an amplitude reference.</p>
+            <p>Each pair shares playback gain, STFT settings, axes, and an 80 dB color scale with a common amplitude reference.</p>
             <button type="button" class="spectrogram-toggle" aria-expanded="true" aria-controls="reference-spectrum generated-spectrum" data-spectrogram-toggle>Hide spectrograms</button>
           </div>
 
@@ -254,7 +257,7 @@
         </header>
 
         <figure class="figure-card dataset-figure">
-          <img src="assets/dataset-overview.png" alt="Overview of the BeVo dataset construction pipeline" />
+          <img src="assets/dataset-overview.png?v=20261004-final-v2" alt="Overview of the BeVo dataset construction pipeline" />
           <figcaption><span>Figure 1</span> Overview of the BeVo Dataset.</figcaption>
         </figure>
 
@@ -266,6 +269,31 @@
           <article style="--species: #f17a2c"><span>05</span><h3>Plains zebra</h3><p>615 events</p></article>
           <article style="--species: #8e1d19"><span>06</span><h3>Zebra finch</h3><p>3,109 events</p></article>
         </div>
+
+        <details class="detail-table">
+          <summary><span>Table 1 · Dataset splits</span><small>24,968 train · 3,123 validation · 3,100 test</small></summary>
+          <div class="table-scroll">
+            <table>
+              <caption class="sr-only">Number of vocalization events in each data split.</caption>
+              <thead>
+                <tr><th scope="col">Split</th><th scope="col">Goat</th><th scope="col">Hyena</th><th scope="col">Marmoset</th><th scope="col">Meerkat</th><th scope="col">Zebra</th><th scope="col">Zebra Finch</th><th scope="col">Total</th></tr>
+              </thead>
+              <tbody>
+                <tr><th scope="row">Train</th><td>2,826</td><td>10,216</td><td>4,800</td><td>4,475</td><td>353</td><td>2,298</td><td>24,968</td></tr>
+                <tr><th scope="row">Validation</th><td>360</td><td>1,226</td><td>600</td><td>564</td><td>62</td><td>311</td><td>3,123</td></tr>
+                <tr><th scope="row">Test</th><td>400</td><td>800</td><td>600</td><td>600</td><td>200</td><td>500</td><td>3,100</td></tr>
+                <tr class="highlight-row"><th scope="row">Total</th><td>3,586</td><td>12,242</td><td>6,000</td><td>5,639</td><td>615</td><td>3,109</td><td>31,191</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="table-note">Samples are split within each species and vocalization anchor using five duration-quantile strata.</p>
+          <p class="table-note">
+            Hyena and meerkat recordings use annotated temporal boundaries; the other corpora provide
+            pre-segmented or short vocalization recordings. Curation includes species- and anchor-specific
+            RMS screening, AnimalCLAP or BioLingual filtering where suitable, and downsampling.
+            Exact preprocessing thresholds are not yet published.
+          </p>
+        </details>
       </section>
 
       <section id="method" class="content-section dark-section">
@@ -283,14 +311,31 @@
 
           <div class="method-layout">
             <figure class="method-figure">
-              <img src="assets/event-aware.png" alt="Event-Aware latent modeling pipeline" />
-              <figcaption>Actual-duration waveform encoding and masked latent flow.</figcaption>
+              <img src="assets/event-aware.png?v=20261004-final-v2" alt="Event-Aware latent modeling pipeline" />
+              <figcaption><span>Figure 2</span> Actual-duration waveform encoding and masked latent flow.</figcaption>
             </figure>
             <ol class="method-steps">
               <li><span>01</span><div><h3>Encode actual duration</h3><p>Each vocalization is independently encoded with only the padding needed for VAE hop alignment.</p></div></li>
               <li><span>02</span><div><h3>Pad within the minibatch</h3><p>Variable-length latent sequences are padded only to the longest event in the current batch.</p></div></li>
               <li><span>03</span><div><h3>Mask attention and loss</h3><p>Padding is excluded from transformer context and rectified-flow optimization.</p></div></li>
+              <li><span>04</span><div><h3>Generate for the requested duration</h3><p>Inference initializes the latent sequence for the target event duration.</p></div></li>
             </ol>
+          </div>
+
+          <div class="experimental-setup">
+            <p class="card-kicker">Experimental setup</p>
+            <dl class="setup-grid">
+              <div><dt>Training</dt><dd>400 epochs · batch size 64</dd></div>
+              <div><dt>Optimizer</dt><dd>AdamW · learning rate 1 × 10<sup>−5</sup></dd></div>
+              <div><dt>Generation</dt><dd>50 steps · guidance scale 4.5</dd></div>
+              <div><dt>Target duration</dt><dd>Corresponding real test recording</dd></div>
+            </dl>
+            <p>
+              The VAE and FLAN-T5 text encoder are frozen; the Flux Transformer, text projection layer,
+              and duration embedder are trained. Both adapted systems share training-sample exposure
+              and condition sampling. The checkpoint with the lowest validation macro loss is selected.
+              Each test instance uses one fixed prompt–duration pair across systems.
+            </p>
           </div>
         </div>
       </section>
@@ -301,49 +346,76 @@
           <div>
             <h2>Results at a glance</h2>
             <p>
-              Task-specific adaptation improves all evaluated metrics. Event-Aware modeling further improves
-              vocalization discriminability and acoustic fidelity over standard fine-tuning.
+              Task-specific adaptation improves all evaluated metrics over zero-shot generation.
+              Event-Aware modeling further improves vocalization discriminability and acoustic fidelity
+              over standard fine-tuning, while language-aligned fidelity metrics remain nearly unchanged.
             </p>
           </div>
         </header>
 
         <div class="metric-grid">
-          <article><p>Macro accuracy <span>↑</span></p><strong>61.99%</strong><small>59.86% fine-tuned</small></article>
+          <article><p>Anchor macro accuracy <span>↑</span></p><strong>61.99%</strong><small>59.86% fine-tuned</small></article>
           <article><p>FAD <span>↓</span></p><strong>1.2239</strong><small>1.4047 fine-tuned</small></article>
           <article><p>AFDD <span>↓</span></p><strong>0.9206</strong><small>1.2480 fine-tuned</small></article>
-          <article><p>Behavior-swap increase</p><strong>85.39%</strong><small>Δp target +0.3139</small></article>
+          <article><p>Swap increase rate</p><strong>85.39%</strong><small>Cases with increased new-target probability</small><small>AVEX Δp<sub>tgt</sub> +0.3139</small></article>
         </div>
 
         <div class="results-grid">
           <div class="table-card">
-            <div class="card-title"><span>Overall evaluation</span><small>↑ higher is better · ↓ lower is better</small></div>
+            <div class="card-title"><span>Table 2 · Overall evaluation</span><small>↑ higher is better · ↓ lower is better</small></div>
             <div class="table-scroll">
-              <table>
+              <table class="results-table">
+                <caption class="sr-only">Overall results on behavior-conditioned animal vocalization generation.</caption>
                 <thead>
-                  <tr><th>System</th><th>Macro Acc. ↑</th><th>mAP ↑</th><th>FAD ↓</th><th>AFDD ↓</th></tr>
+                  <tr><th scope="col">System</th><th scope="col">Macro Acc. ↑</th><th scope="col">mAP ↑</th><th scope="col">FAD ↓</th><th scope="col">AFDD ↓</th><th scope="col">AnimalCLAP-FAD ↓</th><th scope="col">BioLingual-FAD ↓</th></tr>
                 </thead>
                 <tbody>
-                  <tr><th>TangoFlux Zero-shot</th><td>0.1787</td><td>0.2022</td><td>6.7080</td><td>3.4759</td></tr>
-                  <tr><th>TangoFlux Fine-tuned</th><td>0.5986</td><td>0.6345</td><td>1.4047</td><td>1.2480</td></tr>
-                  <tr class="highlight-row"><th>TangoFlux Event-Aware</th><td>0.6199</td><td>0.6551</td><td>1.2239</td><td>0.9206</td></tr>
+                  <tr class="reference-row"><th scope="row">Real Reference</th><td>0.8852</td><td>0.9240</td><td>0.2321</td><td>0.2266</td><td>0.0075</td><td>0.0275</td></tr>
+                  <tr><th scope="row">TangoFlux Zero-shot</th><td>0.1787</td><td>0.2022</td><td>6.7080</td><td>3.4759</td><td>0.3318</td><td>0.4904</td></tr>
+                  <tr><th scope="row">TangoFlux Fine-tuned</th><td>0.5986</td><td>0.6345</td><td>1.4047</td><td>1.2480</td><td><strong>0.0491</strong></td><td>0.1237</td></tr>
+                  <tr class="highlight-row"><th scope="row">TangoFlux Event-Aware</th><td><strong>0.6199</strong></td><td><strong>0.6551</strong></td><td><strong>1.2239</strong></td><td><strong>0.9206</strong></td><td>0.0492</td><td><strong>0.1231</strong></td></tr>
                 </tbody>
               </table>
             </div>
+            <p class="table-note">
+              Bold marks the best generated-system result. Real Reference distribution metrics compare
+              real test audio with an equally sized training subset. Scroll horizontally to view every metric.
+            </p>
           </div>
 
           <aside class="conditioning-card">
-            <p class="card-kicker">Conditioning analysis</p>
-            <h3>Behavior changes the conditional response.</h3>
+            <p class="card-kicker">Table 4 · Conditioning analysis</p>
+            <h3>Behavioral conditions guide anchor-level response.</h3>
             <div class="mini-comparison">
-              <div><span>Full condition</span><strong>.6199</strong><small>accuracy</small></div>
-              <div><span>Species only</span><strong>.2261</strong><small>accuracy</small></div>
+              <div><span>Full condition</span><strong>.6199</strong><small>macro accuracy · mAP .6551</small></div>
+              <div><span>Species only</span><strong>.2261</strong><small>macro accuracy · mAP .2427</small></div>
             </div>
             <p>
-              Replacing a condition with one from another anchor of the same species shifts predictions toward
-              the new target anchor.
+              With duration and generation settings fixed, replacing a condition with one from another
+              anchor of the same species increases the AVEX probability of the new target in 85.39%
+              of cases (Δp<sub>tgt</sub> +0.3139). This measures anchor-level response.
             </p>
           </aside>
         </div>
+
+        <details class="detail-table">
+          <summary><span>Table 3 · Species-wise performance</span><small>Real Reference / Event-Aware</small></summary>
+          <div class="table-scroll">
+            <table>
+              <caption class="sr-only">Species-wise performance of TangoFlux Event-Aware. Each cell reports Real Reference / Event-Aware.</caption>
+              <thead><tr><th scope="col">Species</th><th scope="col">Macro Acc. ↑</th><th scope="col">FAD ↓</th><th scope="col">BioLingual-FAD ↓</th></tr></thead>
+              <tbody>
+                <tr><th scope="row">Hyena</th><td>0.9000 / 0.5500</td><td>0.1622 / 1.1566</td><td>0.0227 / 0.1029</td></tr>
+                <tr><th scope="row">Meerkat</th><td>0.7883 / 0.6967</td><td>0.2478 / 1.5149</td><td>0.0155 / 0.0739</td></tr>
+                <tr><th scope="row">Marmoset</th><td>0.9717 / 0.6550</td><td>0.1147 / 1.8304</td><td>0.0225 / 0.2129</td></tr>
+                <tr><th scope="row">Goat</th><td>0.8300 / 0.4050</td><td>0.1561 / 0.7219</td><td>0.0273 / 0.0974</td></tr>
+                <tr><th scope="row">Zebra</th><td>0.9650 / 0.6550</td><td>0.5648 / 1.1341</td><td>0.0520 / 0.1151</td></tr>
+                <tr><th scope="row">Zebra Finch</th><td>0.8560 / 0.7580</td><td>0.1470 / 0.9853</td><td>0.0249 / 0.1364</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="table-note">Generation difficulty varies across species and evaluation dimensions; each cell is Real Reference / Event-Aware.</p>
+        </details>
 
         <figure class="figure-card embedding-figure">
           <div class="figure-copy">
@@ -354,7 +426,7 @@
               for generated samples.
             </p>
           </div>
-          <img src="assets/animalclap_tsne.png" alt="t-SNE of real and generated vocalizations in AnimalCLAP space" />
+          <img src="assets/animalclap_tsne.png?v=20261004-final-v2" alt="t-SNE of real and generated vocalizations in AnimalCLAP space" />
           <figcaption><span>Figure 3</span> AnimalCLAP representation space.</figcaption>
         </figure>
       </section>
@@ -376,15 +448,16 @@
           <div>
             <p class="section-index">07 / CITATION</p>
             <h2>Cite this work</h2>
-            <p>The final venue, paper URL, and BibTeX entry can be updated once available.</p>
+            <p>Use this manuscript citation. Venue details can be added when available.</p>
           </div>
           <div class="citation-card">
             <button type="button" class="copy-button" data-copy-citation>Copy BibTeX</button>
             <pre><code data-citation>@article{deng2026bevo,
-  title   = {Behavior-Conditioned Animal Vocalization Generation},
-  author  = {Deng, Xinlong and Tian, Yong and Guan, Jian and Jiang, Jie and Cao, Yin},
+  title   = {Behavior-Conditioned Animal Vocalization Generation: Event-Aware Modeling and Multidimensional Evaluation},
+  author  = {Deng, Xinlong and Tian, Yong and Guan, Jian and Kong, Qiuqiang and Jiang, Jie and Cao, Yin},
   year    = {2026},
-  note    = {Manuscript}
+  note    = {Manuscript},
+  url     = {https://persimmontian.github.io/BCAVG/}
 }</code></pre>
             <p class="copy-status" role="status" aria-live="polite" data-copy-status></p>
           </div>
@@ -399,7 +472,7 @@
       </div>
     </footer>
 
-    <script src="samples.js?v=20261004-anchors-v1"></script>
-    <script src="script.js?v=20261004-anchors-v1"></script>
+    <script src="samples.js?v=20261004-final-v2"></script>
+    <script src="script.js?v=20261004-final-v2"></script>
   </body>
 </html>
