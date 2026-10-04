@@ -188,13 +188,13 @@ sup { font-size: 0.62em; line-height: 0; }
   max-width: 1180px;
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(3.6rem, 6.8vw, 6.25rem);
+  font-size: clamp(3.3rem, 6.35vw, 5.9rem);
   font-weight: 600;
-  letter-spacing: -0.058em;
-  line-height: 0.92;
+  letter-spacing: -0.05em;
+  line-height: 0.98;
 }
 .hero h1 span, .hero h1 em { display: block; }
-.hero h1 em { color: var(--green); font-weight: 500; }
+.hero h1 em { color: var(--green); font-style: normal; font-weight: inherit; }
 .hero-deck {
   margin-top: 40px;
   display: grid;
