@@ -15,7 +15,20 @@
       0
     ],
     "plot_reference": "One common peak STFT amplitude across both clips in each pair",
-    "playback_processing": "Same gain for both members of each pair, bringing their joint sample peak to -3 dBFS; PCM16 conversion only, no crop, time stretching, filtering or independent normalization. Original source files are unchanged."
+    "playback_processing": "Same gain for both members of each pair, bringing their joint sample peak to -3 dBFS; PCM16 conversion only, no crop, time stretching, filtering or independent normalization. Original source files are unchanged.",
+    "plot_settings": {
+      "description": "Duration-adaptive Hann windows and species-aware frequency axes, identical within each real/generated pair. Settings recorded per selected pair. No image smoothing or interpolation.",
+      "reference": "Joint peak STFT amplitude across the two exported playback clips",
+      "db_range": [
+        -80,
+        0
+      ],
+      "image_pixels": [
+        1920,
+        840
+      ],
+      "note": "Display parameters only; fixed ranking-analysis FFT/hop and paper evaluation metrics are unchanged."
+    }
   },
   "total_manifest_records": 3100,
   "labels_with_candidates": 42,
@@ -4372,7 +4385,27 @@
       "id": "hyena-whoop-172",
       "playback_gain_db": 18.488,
       "real_sha256": "008dbfd6490041cbf419bb028b208609cc5b7bb606c0a2f8478571916f39291e",
-      "generated_sha256": "a7146c758ab702304d81c931662d46b6c424da4b122847f3bcbd33bf191a3210"
+      "generated_sha256": "a7146c758ab702304d81c931662d46b6c424da4b122847f3bcbd33bf191a3210",
+      "spectrogram_settings": {
+        "window": "hann",
+        "fft_size": 4096,
+        "hop_samples": 256,
+        "frequency_scale": "log",
+        "frequency_limits_hz": [
+          50,
+          22050.0
+        ],
+        "time_unit": "s",
+        "image_pixels": [
+          1920,
+          840
+        ],
+        "db_range": [
+          -80,
+          0
+        ],
+        "shared_reference_db": -10.918593406677246
+      }
     },
     {
       "animal": "hyena",
@@ -4395,7 +4428,27 @@
       "id": "hyena-alarm-rumble-22",
       "playback_gain_db": 23.31,
       "real_sha256": "f3a0b8a98fcb767fce2957d759e28c9966b2cfc8895066708264c6bb29064861",
-      "generated_sha256": "3b424d77ea0b6d83d2cca9cd1a3c65414b3bd34dc748345719d3f376d7c815ef"
+      "generated_sha256": "3b424d77ea0b6d83d2cca9cd1a3c65414b3bd34dc748345719d3f376d7c815ef",
+      "spectrogram_settings": {
+        "window": "hann",
+        "fft_size": 4096,
+        "hop_samples": 256,
+        "frequency_scale": "log",
+        "frequency_limits_hz": [
+          50,
+          22050.0
+        ],
+        "time_unit": "s",
+        "image_pixels": [
+          1920,
+          840
+        ],
+        "db_range": [
+          -80,
+          0
+        ],
+        "shared_reference_db": -10.829795837402344
+      }
     },
     {
       "animal": "hyena",
@@ -4418,7 +4471,27 @@
       "id": "hyena-giggle-28",
       "playback_gain_db": 17.184,
       "real_sha256": "1f051d0964a2e6c87f10c8fd0c206e1692dfdc11436d42df4fd2f5202653f43b",
-      "generated_sha256": "fa62fc6a2f59d1fe29e86ede46b737ef97ae06e6b3c35fa78f85b903d2ef349d"
+      "generated_sha256": "fa62fc6a2f59d1fe29e86ede46b737ef97ae06e6b3c35fa78f85b903d2ef349d",
+      "spectrogram_settings": {
+        "window": "hann",
+        "fft_size": 2048,
+        "hop_samples": 128,
+        "frequency_scale": "log",
+        "frequency_limits_hz": [
+          50,
+          22050.0
+        ],
+        "time_unit": "ms",
+        "image_pixels": [
+          1920,
+          840
+        ],
+        "db_range": [
+          -80,
+          0
+        ],
+        "shared_reference_db": -16.625957489013672
+      }
     },
     {
       "animal": "hyena",
@@ -4441,7 +4514,27 @@
       "id": "hyena-groan-3647",
       "playback_gain_db": 20.749,
       "real_sha256": "7741864a8803703e26cf647761ac67cdc1317522f261501ebafa6da77f01ca91",
-      "generated_sha256": "d7d15e7427fea65e0e946f11ca4fadd8acc49b93554d92751fbc7e56e1cbdf30"
+      "generated_sha256": "d7d15e7427fea65e0e946f11ca4fadd8acc49b93554d92751fbc7e56e1cbdf30",
+      "spectrogram_settings": {
+        "window": "hann",
+        "fft_size": 4096,
+        "hop_samples": 256,
+        "frequency_scale": "log",
+        "frequency_limits_hz": [
+          50,
+          22050.0
+        ],
+        "time_unit": "s",
+        "image_pixels": [
+          1920,
+          840
+        ],
+        "db_range": [
+          -80,
+          0
+        ],
+        "shared_reference_db": -5.876462936401367
+      }
     },
     {
       "animal": "hyena",
@@ -4464,7 +4557,27 @@
       "id": "hyena-growl-23",
       "playback_gain_db": 27.019,
       "real_sha256": "2a430b6d109ec26d5eddc28e05f5837701ed4a609f6799bb379986a704d59c2f",
-      "generated_sha256": "40dfd6efc2f3cc48b5317b87d3e1e58b83247cdb9fbe1c8f056e0825939e3479"
+      "generated_sha256": "40dfd6efc2f3cc48b5317b87d3e1e58b83247cdb9fbe1c8f056e0825939e3479",
+      "spectrogram_settings": {
+        "window": "hann",
+        "fft_size": 2048,
+        "hop_samples": 128,
+        "frequency_scale": "log",
+        "frequency_limits_hz": [
+          50,
+          22050.0
+        ],
+        "time_unit": "ms",
+        "image_pixels": [
+          1920,
+          840
+        ],
+        "db_range": [
+          -80,
+          0
+        ],
+        "shared_reference_db": -7.50927209854126
+      }
     },
     {
       "animal": "hyena",
@@ -4487,7 +4600,27 @@
       "id": "hyena-snore-1070",
       "playback_gain_db": 45.302,
       "real_sha256": "de45f2a958079d5b0b504fbf7d181c8ecc8d1635d17a84bbd708f6b36e0c1d79",
-      "generated_sha256": "772d3902e4d477c202fe13de667ba92fdefbf9c99cbb11333d3829df6cd3f760"
+      "generated_sha256": "772d3902e4d477c202fe13de667ba92fdefbf9c99cbb11333d3829df6cd3f760",
+      "spectrogram_settings": {
+        "window": "hann",
+        "fft_size": 4096,
+        "hop_samples": 256,
+        "frequency_scale": "log",
+        "frequency_limits_hz": [
+          50,
+          22050.0
+        ],
+        "time_unit": "s",
+        "image_pixels": [
+          1920,
+          840
+        ],
+        "db_range": [
+          -80,
+          0
+        ],
+        "shared_reference_db": -9.031351089477539
+      }
     },
     {
       "animal": "hyena",
@@ -4510,7 +4643,27 @@
       "id": "hyena-squeal-1582",
       "playback_gain_db": 32.364,
       "real_sha256": "bb1dc5fd63252297cf9983f2e2922806a0df456b5e2aa13c0312a637dd6298f4",
-      "generated_sha256": "e284fbc95d098c179c013fc7312cd475819db589f419fce1820adda1dde0941f"
+      "generated_sha256": "e284fbc95d098c179c013fc7312cd475819db589f419fce1820adda1dde0941f",
+      "spectrogram_settings": {
+        "window": "hann",
+        "fft_size": 2048,
+        "hop_samples": 128,
+        "frequency_scale": "log",
+        "frequency_limits_hz": [
+          50,
+          22050.0
+        ],
+        "time_unit": "ms",
+        "image_pixels": [
+          1920,
+          840
+        ],
+        "db_range": [
+          -80,
+          0
+        ],
+        "shared_reference_db": -12.650060653686523
+      }
     },
     {
       "animal": "hyena",
@@ -4533,7 +4686,27 @@
       "id": "hyena-squitter-769",
       "playback_gain_db": 40.99,
       "real_sha256": "41a04d5741f237771ab6442433c975db73559c973cdfb2e449a50a060741451e",
-      "generated_sha256": "25dceb2489c145033415b91c7dd64d8a6303ec234fce435a36a8514eac6523c7"
+      "generated_sha256": "25dceb2489c145033415b91c7dd64d8a6303ec234fce435a36a8514eac6523c7",
+      "spectrogram_settings": {
+        "window": "hann",
+        "fft_size": 4096,
+        "hop_samples": 256,
+        "frequency_scale": "log",
+        "frequency_limits_hz": [
+          50,
+          22050.0
+        ],
+        "time_unit": "s",
+        "image_pixels": [
+          1920,
+          840
+        ],
+        "db_range": [
+          -80,
+          0
+        ],
+        "shared_reference_db": -24.50421142578125
+      }
     },
     {
       "animal": "meerkat",
@@ -4556,7 +4729,27 @@
       "id": "meerkat-alarm-call-303",
       "playback_gain_db": 14.937,
       "real_sha256": "a3a508d0367fb179356debcc62acf396ef1b965c357e7789fedf0fad39cc4843",
-      "generated_sha256": "1ad82b9591b702433f9bd270dd7eaf144efe27420289c023d9cf1db6f8509307"
+      "generated_sha256": "1ad82b9591b702433f9bd270dd7eaf144efe27420289c023d9cf1db6f8509307",
+      "spectrogram_settings": {
+        "window": "hann",
+        "fft_size": 1024,
+        "hop_samples": 64,
+        "frequency_scale": "linear",
+        "frequency_limits_hz": [
+          0,
+          22050.0
+        ],
+        "time_unit": "ms",
+        "image_pixels": [
+          1920,
+          840
+        ],
+        "db_range": [
+          -80,
+          0
+        ],
+        "shared_reference_db": -6.102364540100098
+      }
     },
     {
       "animal": "meerkat",
@@ -4579,7 +4772,27 @@
       "id": "meerkat-aggressive-call-786",
       "playback_gain_db": 4.135,
       "real_sha256": "c355e4e9c0f6aafbb40fe48a30928f4e086377bd3f1469f5e3a2c183bd1aeb5d",
-      "generated_sha256": "ec227a71574a598d24ed0bba35dd81702b01561fe0d6eb4c9adcbddfe1205ee5"
+      "generated_sha256": "ec227a71574a598d24ed0bba35dd81702b01561fe0d6eb4c9adcbddfe1205ee5",
+      "spectrogram_settings": {
+        "window": "hann",
+        "fft_size": 1024,
+        "hop_samples": 64,
+        "frequency_scale": "linear",
+        "frequency_limits_hz": [
+          0,
+          22050.0
+        ],
+        "time_unit": "ms",
+        "image_pixels": [
+          1920,
+          840
+        ],
+        "db_range": [
+          -80,
+          0
+        ],
+        "shared_reference_db": -12.737743377685547
+      }
     },
     {
       "animal": "meerkat",
@@ -4602,7 +4815,27 @@
       "id": "meerkat-close-call-18",
       "playback_gain_db": 13.057,
       "real_sha256": "f7113a567a5c1daf59c196076f9faf46e0800d79a7099255fb9f6c287fa87e0b",
-      "generated_sha256": "24ce7e72f9ab21e5d29cfd9225c6805e94de19b9176511bf0ae1f6dba1a6bf2a"
+      "generated_sha256": "24ce7e72f9ab21e5d29cfd9225c6805e94de19b9176511bf0ae1f6dba1a6bf2a",
+      "spectrogram_settings": {
+        "window": "hann",
+        "fft_size": 1024,
+        "hop_samples": 64,
+        "frequency_scale": "linear",
+        "frequency_limits_hz": [
+          0,
+          22050.0
+        ],
+        "time_unit": "ms",
+        "image_pixels": [
+          1920,
+          840
+        ],
+        "db_range": [
+          -80,
+          0
+        ],
+        "shared_reference_db": -11.802030563354492
+      }
     },
     {
       "animal": "meerkat",
@@ -4625,7 +4858,27 @@
       "id": "meerkat-lead-call-120",
       "playback_gain_db": 9.311,
       "real_sha256": "4ab015cc4158170a21115afdd70498f25ca8766e2102171cebb0c08c503a7022",
-      "generated_sha256": "0f829ed2d8155309ebeab1e3930c0007ec9fc0d92e6f1c1f5437a491249d7dfb"
+      "generated_sha256": "0f829ed2d8155309ebeab1e3930c0007ec9fc0d92e6f1c1f5437a491249d7dfb",
+      "spectrogram_settings": {
+        "window": "hann",
+        "fft_size": 1024,
+        "hop_samples": 64,
+        "frequency_scale": "linear",
+        "frequency_limits_hz": [
+          0,
+          22050.0
+        ],
+        "time_unit": "ms",
+        "image_pixels": [
+          1920,
+          840
+        ],
+        "db_range": [
+          -80,
+          0
+        ],
+        "shared_reference_db": -6.801399230957031
+      }
     },
     {
       "animal": "meerkat",
@@ -4648,7 +4901,27 @@
       "id": "meerkat-move-call-788",
       "playback_gain_db": 11.379,
       "real_sha256": "064a88f318fc611344f1274a6725a398d24dcc3f2062cd27aabbb32d70542113",
-      "generated_sha256": "0aee3775707433d7cff7d607cf77c5d71059b0420b3205feaeb3d543c6712ed9"
+      "generated_sha256": "0aee3775707433d7cff7d607cf77c5d71059b0420b3205feaeb3d543c6712ed9",
+      "spectrogram_settings": {
+        "window": "hann",
+        "fft_size": 1024,
+        "hop_samples": 64,
+        "frequency_scale": "linear",
+        "frequency_limits_hz": [
+          0,
+          22050.0
+        ],
+        "time_unit": "ms",
+        "image_pixels": [
+          1920,
+          840
+        ],
+        "db_range": [
+          -80,
+          0
+        ],
+        "shared_reference_db": -6.043396949768066
+      }
     },
     {
       "animal": "meerkat",
@@ -4671,7 +4944,27 @@
       "id": "meerkat-social-call-65",
       "playback_gain_db": 10.236,
       "real_sha256": "1926fabaad4e9236bb61b027a4fb93e67923156b99b7908f52f9f5af6669a204",
-      "generated_sha256": "00d372c55ace75f2dccf5b39f7dad3edbcf1d80c6baee74656387a95b0aa538a"
+      "generated_sha256": "00d372c55ace75f2dccf5b39f7dad3edbcf1d80c6baee74656387a95b0aa538a",
+      "spectrogram_settings": {
+        "window": "hann",
+        "fft_size": 1024,
+        "hop_samples": 64,
+        "frequency_scale": "linear",
+        "frequency_limits_hz": [
+          0,
+          22050.0
+        ],
+        "time_unit": "ms",
+        "image_pixels": [
+          1920,
+          840
+        ],
+        "db_range": [
+          -80,
+          0
+        ],
+        "shared_reference_db": -9.979913711547852
+      }
     },
     {
       "animal": "marmoset",
@@ -4694,7 +4987,27 @@
       "id": "marmoset-phee-204",
       "playback_gain_db": 0.805,
       "real_sha256": "14f37472262350caf38296b8ece6578c8566e49cb3d971396f2da9f45e14c016",
-      "generated_sha256": "688361cd694e66710d9471d9feb42e0cc68c30f9d02b6c3b8fd347a502b30610"
+      "generated_sha256": "688361cd694e66710d9471d9feb42e0cc68c30f9d02b6c3b8fd347a502b30610",
+      "spectrogram_settings": {
+        "window": "hann",
+        "fft_size": 2048,
+        "hop_samples": 128,
+        "frequency_scale": "linear",
+        "frequency_limits_hz": [
+          0,
+          22050.0
+        ],
+        "time_unit": "s",
+        "image_pixels": [
+          1920,
+          840
+        ],
+        "db_range": [
+          -80,
+          0
+        ],
+        "shared_reference_db": -6.3951802253723145
+      }
     },
     {
       "animal": "marmoset",
@@ -4717,7 +5030,27 @@
       "id": "marmoset-infant-829",
       "playback_gain_db": 11.109,
       "real_sha256": "a018655c0f79d66cb4677c70d65748630978e28b91d8f36a02c66c72cbbcb283",
-      "generated_sha256": "fa1d48f642d4b3d594b51a3f8667226327e34700cae36ad906cc687a5b5a04a5"
+      "generated_sha256": "fa1d48f642d4b3d594b51a3f8667226327e34700cae36ad906cc687a5b5a04a5",
+      "spectrogram_settings": {
+        "window": "hann",
+        "fft_size": 2048,
+        "hop_samples": 128,
+        "frequency_scale": "linear",
+        "frequency_limits_hz": [
+          0,
+          22050.0
+        ],
+        "time_unit": "s",
+        "image_pixels": [
+          1920,
+          840
+        ],
+        "db_range": [
+          -80,
+          0
+        ],
+        "shared_reference_db": -9.20413875579834
+      }
     },
     {
       "animal": "marmoset",
@@ -4740,7 +5073,27 @@
       "id": "marmoset-seep-390",
       "playback_gain_db": 15.506,
       "real_sha256": "1e078fd42bc01d7b00e7d9d18278ec36b4e08003e766aecff60e2eb2375937b6",
-      "generated_sha256": "f4c2d4c9ee79e271359e10edeefc14523652a8848de5629725b500ed5a637361"
+      "generated_sha256": "f4c2d4c9ee79e271359e10edeefc14523652a8848de5629725b500ed5a637361",
+      "spectrogram_settings": {
+        "window": "hann",
+        "fft_size": 2048,
+        "hop_samples": 128,
+        "frequency_scale": "linear",
+        "frequency_limits_hz": [
+          0,
+          22050.0
+        ],
+        "time_unit": "s",
+        "image_pixels": [
+          1920,
+          840
+        ],
+        "db_range": [
+          -80,
+          0
+        ],
+        "shared_reference_db": -6.295847415924072
+      }
     },
     {
       "animal": "marmoset",
@@ -4763,7 +5116,27 @@
       "id": "marmoset-trill-532",
       "playback_gain_db": 19.35,
       "real_sha256": "0d84ecb3d52ce087603e6fb72503cf59adeb259f2fd1da816ab4cf1db4948a0b",
-      "generated_sha256": "51ecde377796410f0cf8d26404665e45b3190157d7495b07a83795f881d03404"
+      "generated_sha256": "51ecde377796410f0cf8d26404665e45b3190157d7495b07a83795f881d03404",
+      "spectrogram_settings": {
+        "window": "hann",
+        "fft_size": 2048,
+        "hop_samples": 128,
+        "frequency_scale": "linear",
+        "frequency_limits_hz": [
+          0,
+          22050.0
+        ],
+        "time_unit": "s",
+        "image_pixels": [
+          1920,
+          840
+        ],
+        "db_range": [
+          -80,
+          0
+        ],
+        "shared_reference_db": -1.760299801826477
+      }
     },
     {
       "animal": "marmoset",
@@ -4786,7 +5159,27 @@
       "id": "marmoset-tsik-579",
       "playback_gain_db": 16.824,
       "real_sha256": "038342994c8845c432445f06c5c082c193413b5293f577fc49d7538586566075",
-      "generated_sha256": "71713e46c90abf7ea421ae0899f2ba9e8dab1d5cdbe2275a12d333458af204f2"
+      "generated_sha256": "71713e46c90abf7ea421ae0899f2ba9e8dab1d5cdbe2275a12d333458af204f2",
+      "spectrogram_settings": {
+        "window": "hann",
+        "fft_size": 2048,
+        "hop_samples": 128,
+        "frequency_scale": "linear",
+        "frequency_limits_hz": [
+          0,
+          22050.0
+        ],
+        "time_unit": "s",
+        "image_pixels": [
+          1920,
+          840
+        ],
+        "db_range": [
+          -80,
+          0
+        ],
+        "shared_reference_db": -4.726380825042725
+      }
     },
     {
       "animal": "marmoset",
@@ -4809,7 +5202,27 @@
       "id": "marmoset-twitter-320",
       "playback_gain_db": 14.494,
       "real_sha256": "5801c04f28aaf9fc5ad936b13a52eec478eee74037491a5b41a36d8b46bb019f",
-      "generated_sha256": "db48797ca5d2bc2c911bca7f31a4793b944876107ce4f89f5a2329f3e45a61d2"
+      "generated_sha256": "db48797ca5d2bc2c911bca7f31a4793b944876107ce4f89f5a2329f3e45a61d2",
+      "spectrogram_settings": {
+        "window": "hann",
+        "fft_size": 2048,
+        "hop_samples": 128,
+        "frequency_scale": "linear",
+        "frequency_limits_hz": [
+          0,
+          22050.0
+        ],
+        "time_unit": "s",
+        "image_pixels": [
+          1920,
+          840
+        ],
+        "db_range": [
+          -80,
+          0
+        ],
+        "shared_reference_db": -2.5746312141418457
+      }
     },
     {
       "animal": "goat",
@@ -4832,7 +5245,27 @@
       "id": "goat-mother-kid-reunion-383",
       "playback_gain_db": 12.158,
       "real_sha256": "0b97f2a3668cbdeed6fcaa3400dd230e5d65e11726686b5341b6066378fecde1",
-      "generated_sha256": "24af442f991cfdf4709fe1c33f4952dbf80e8367be6270a654572622474f07e7"
+      "generated_sha256": "24af442f991cfdf4709fe1c33f4952dbf80e8367be6270a654572622474f07e7",
+      "spectrogram_settings": {
+        "window": "hann",
+        "fft_size": 4096,
+        "hop_samples": 256,
+        "frequency_scale": "log",
+        "frequency_limits_hz": [
+          50,
+          22050.0
+        ],
+        "time_unit": "s",
+        "image_pixels": [
+          1920,
+          840
+        ],
+        "db_range": [
+          -80,
+          0
+        ],
+        "shared_reference_db": -14.244560241699219
+      }
     },
     {
       "animal": "goat",
@@ -4855,7 +5288,27 @@
       "id": "goat-feed-distribution-239",
       "playback_gain_db": 10.82,
       "real_sha256": "c95c5ef6a23995e5a4bc2dd9602a3bccc2f02aaa35787950773cc3027c1d66de",
-      "generated_sha256": "5afa75abb6d7709b657266bf9e4fee9462ff3a2a604a7af5cdfc75e65656bbc8"
+      "generated_sha256": "5afa75abb6d7709b657266bf9e4fee9462ff3a2a604a7af5cdfc75e65656bbc8",
+      "spectrogram_settings": {
+        "window": "hann",
+        "fft_size": 4096,
+        "hop_samples": 256,
+        "frequency_scale": "log",
+        "frequency_limits_hz": [
+          50,
+          22050.0
+        ],
+        "time_unit": "s",
+        "image_pixels": [
+          1920,
+          840
+        ],
+        "db_range": [
+          -80,
+          0
+        ],
+        "shared_reference_db": -13.540726661682129
+      }
     },
     {
       "animal": "goat",
@@ -4878,7 +5331,27 @@
       "id": "goat-heat-399",
       "playback_gain_db": 2.746,
       "real_sha256": "d6b90b93431c271baba0077b95afef252d3827f92b30466244f24cc7d243105d",
-      "generated_sha256": "a4f17e6808d39a83a401b03ddbc9f09657b936f9322d3015dfb93c46681defee"
+      "generated_sha256": "a4f17e6808d39a83a401b03ddbc9f09657b936f9322d3015dfb93c46681defee",
+      "spectrogram_settings": {
+        "window": "hann",
+        "fft_size": 4096,
+        "hop_samples": 256,
+        "frequency_scale": "log",
+        "frequency_limits_hz": [
+          50,
+          22050.0
+        ],
+        "time_unit": "s",
+        "image_pixels": [
+          1920,
+          840
+        ],
+        "db_range": [
+          -80,
+          0
+        ],
+        "shared_reference_db": -12.245598793029785
+      }
     },
     {
       "animal": "goat",
@@ -4901,7 +5374,27 @@
       "id": "goat-injury-or-death-154",
       "playback_gain_db": 10.368,
       "real_sha256": "84def13348fe84d63b67efff5d59e18235a04f6ec5f6606256d425cb7cd357ab",
-      "generated_sha256": "4e75f5afdd01e187308ec8a5afaa39785a63276080f08117666082c71b06ef30"
+      "generated_sha256": "4e75f5afdd01e187308ec8a5afaa39785a63276080f08117666082c71b06ef30",
+      "spectrogram_settings": {
+        "window": "hann",
+        "fft_size": 4096,
+        "hop_samples": 256,
+        "frequency_scale": "log",
+        "frequency_limits_hz": [
+          50,
+          22050.0
+        ],
+        "time_unit": "s",
+        "image_pixels": [
+          1920,
+          840
+        ],
+        "db_range": [
+          -80,
+          0
+        ],
+        "shared_reference_db": -13.00023078918457
+      }
     },
     {
       "animal": "goat",
@@ -4924,7 +5417,27 @@
       "id": "goat-mother-kid-separation-64",
       "playback_gain_db": 12.584,
       "real_sha256": "6753441a340dc031bb9bdcee1e0678630c61312d45079b564a60685d2f6a3bb8",
-      "generated_sha256": "9d3f397962bec6747fa9d880ba6048b27e65e06897066282b9d4882e25a4bc2f"
+      "generated_sha256": "9d3f397962bec6747fa9d880ba6048b27e65e06897066282b9d4882e25a4bc2f",
+      "spectrogram_settings": {
+        "window": "hann",
+        "fft_size": 4096,
+        "hop_samples": 256,
+        "frequency_scale": "log",
+        "frequency_limits_hz": [
+          50,
+          22050.0
+        ],
+        "time_unit": "s",
+        "image_pixels": [
+          1920,
+          840
+        ],
+        "db_range": [
+          -80,
+          0
+        ],
+        "shared_reference_db": -15.948127746582031
+      }
     },
     {
       "animal": "goat",
@@ -4947,7 +5460,27 @@
       "id": "goat-parturition-278",
       "playback_gain_db": 4.379,
       "real_sha256": "738662c6584531c1a566ab6b7c15c371ece96ab702f08930a9d3b63344ff1afd",
-      "generated_sha256": "16e94188f9c215dab12978af057f10cc7919ce9b4e361b3a39034883dc300efd"
+      "generated_sha256": "16e94188f9c215dab12978af057f10cc7919ce9b4e361b3a39034883dc300efd",
+      "spectrogram_settings": {
+        "window": "hann",
+        "fft_size": 4096,
+        "hop_samples": 256,
+        "frequency_scale": "log",
+        "frequency_limits_hz": [
+          50,
+          22050.0
+        ],
+        "time_unit": "s",
+        "image_pixels": [
+          1920,
+          840
+        ],
+        "db_range": [
+          -80,
+          0
+        ],
+        "shared_reference_db": -16.25850486755371
+      }
     },
     {
       "animal": "goat",
@@ -4970,7 +5503,27 @@
       "id": "goat-presence-of-unknown-visitors-88",
       "playback_gain_db": 8.822,
       "real_sha256": "c19758809c43b829e4a7a6a70370f5efdd25769004d52cd690bf794dc2661e43",
-      "generated_sha256": "45d7192983ec7a23f540aac4768cca8a0cb537d87d840ea6b9891eaf210523a1"
+      "generated_sha256": "45d7192983ec7a23f540aac4768cca8a0cb537d87d840ea6b9891eaf210523a1",
+      "spectrogram_settings": {
+        "window": "hann",
+        "fft_size": 4096,
+        "hop_samples": 256,
+        "frequency_scale": "log",
+        "frequency_limits_hz": [
+          50,
+          22050.0
+        ],
+        "time_unit": "s",
+        "image_pixels": [
+          1920,
+          840
+        ],
+        "db_range": [
+          -80,
+          0
+        ],
+        "shared_reference_db": -14.619901657104492
+      }
     },
     {
       "animal": "goat",
@@ -4993,7 +5546,27 @@
       "id": "goat-social-isolation-99",
       "playback_gain_db": 10.237,
       "real_sha256": "bd7572d9eb36a7618ec4d8dae3b8cf9fafda6a275b0270854ef9201be7a0ef89",
-      "generated_sha256": "11c227b7695418776b896be137b3616e14c947558993c8abe30c6f94e7467fcd"
+      "generated_sha256": "11c227b7695418776b896be137b3616e14c947558993c8abe30c6f94e7467fcd",
+      "spectrogram_settings": {
+        "window": "hann",
+        "fft_size": 4096,
+        "hop_samples": 256,
+        "frequency_scale": "log",
+        "frequency_limits_hz": [
+          50,
+          22050.0
+        ],
+        "time_unit": "s",
+        "image_pixels": [
+          1920,
+          840
+        ],
+        "db_range": [
+          -80,
+          0
+        ],
+        "shared_reference_db": -9.798750877380371
+      }
     },
     {
       "animal": "zebra",
@@ -5016,7 +5589,27 @@
       "id": "zebra-quagga-quagga-94",
       "playback_gain_db": 15.439,
       "real_sha256": "7b475e335c655c93f25aeffd0e7d76640abf64c9e8e1dcfefaffe3f8c1e41093",
-      "generated_sha256": "b584d8f2ca7135194b4d78296b0493c36e6e9c8e91f91b8e4ea9873f38162b6f"
+      "generated_sha256": "b584d8f2ca7135194b4d78296b0493c36e6e9c8e91f91b8e4ea9873f38162b6f",
+      "spectrogram_settings": {
+        "window": "hann",
+        "fft_size": 4096,
+        "hop_samples": 256,
+        "frequency_scale": "log",
+        "frequency_limits_hz": [
+          50,
+          22050.0
+        ],
+        "time_unit": "s",
+        "image_pixels": [
+          1920,
+          840
+        ],
+        "db_range": [
+          -80,
+          0
+        ],
+        "shared_reference_db": -12.229069709777832
+      }
     },
     {
       "animal": "zebra",
@@ -5039,7 +5632,27 @@
       "id": "zebra-snort-153",
       "playback_gain_db": 17.26,
       "real_sha256": "ac3a4a4b08f5d6eec042f2dea7dee5443ec84891ce4b2599554cd7bb9775f207",
-      "generated_sha256": "b674ddfade53abcec71539784c4a999efc306c66c6a07ea5bb1a705160c1a5b9"
+      "generated_sha256": "b674ddfade53abcec71539784c4a999efc306c66c6a07ea5bb1a705160c1a5b9",
+      "spectrogram_settings": {
+        "window": "hann",
+        "fft_size": 2048,
+        "hop_samples": 128,
+        "frequency_scale": "log",
+        "frequency_limits_hz": [
+          50,
+          22050.0
+        ],
+        "time_unit": "ms",
+        "image_pixels": [
+          1920,
+          840
+        ],
+        "db_range": [
+          -80,
+          0
+        ],
+        "shared_reference_db": -5.433661460876465
+      }
     },
     {
       "animal": "zebra",
@@ -5062,7 +5675,27 @@
       "id": "zebra-soft-snort-162",
       "playback_gain_db": 14.956,
       "real_sha256": "9e0c5faab03778f5084948f099eb87cf65aa7311ea0ecfd4d117cc57fc65f313",
-      "generated_sha256": "9fef21668cbe6799367822b5673112ae25b0efb368dd07deb39dc8594c534b42"
+      "generated_sha256": "9fef21668cbe6799367822b5673112ae25b0efb368dd07deb39dc8594c534b42",
+      "spectrogram_settings": {
+        "window": "hann",
+        "fft_size": 2048,
+        "hop_samples": 128,
+        "frequency_scale": "log",
+        "frequency_limits_hz": [
+          50,
+          22050.0
+        ],
+        "time_unit": "ms",
+        "image_pixels": [
+          1920,
+          840
+        ],
+        "db_range": [
+          -80,
+          0
+        ],
+        "shared_reference_db": -6.30747127532959
+      }
     },
     {
       "animal": "zebra",
@@ -5085,7 +5718,27 @@
       "id": "zebra-squeal-132",
       "playback_gain_db": 14.613,
       "real_sha256": "9bdb31255bf6555e0efa62af7e2bcc4e36f356b015b8936130766e1f3b6ead43",
-      "generated_sha256": "9f67ddd3d27d4c2fde5c5ace15142a06106082a4c80c42a3496ea9f366f1d3e5"
+      "generated_sha256": "9f67ddd3d27d4c2fde5c5ace15142a06106082a4c80c42a3496ea9f366f1d3e5",
+      "spectrogram_settings": {
+        "window": "hann",
+        "fft_size": 512,
+        "hop_samples": 32,
+        "frequency_scale": "log",
+        "frequency_limits_hz": [
+          50,
+          22050.0
+        ],
+        "time_unit": "ms",
+        "image_pixels": [
+          1920,
+          840
+        ],
+        "db_range": [
+          -80,
+          0
+        ],
+        "shared_reference_db": -0.44749173521995544
+      }
     },
     {
       "animal": "zebrafinch",
@@ -5108,7 +5761,27 @@
       "id": "zebra-finch-song-84",
       "playback_gain_db": 9.169,
       "real_sha256": "1ac20864e4f0b092af07c9707df7467ccc974651b23e0a23a9d8f31bc017bca0",
-      "generated_sha256": "2be75de13b1cd884645b105bafee2044f0b50082d9f5226ebfda16b74364851d"
+      "generated_sha256": "2be75de13b1cd884645b105bafee2044f0b50082d9f5226ebfda16b74364851d",
+      "spectrogram_settings": {
+        "window": "hann",
+        "fft_size": 2048,
+        "hop_samples": 128,
+        "frequency_scale": "linear",
+        "frequency_limits_hz": [
+          0,
+          22050.0
+        ],
+        "time_unit": "s",
+        "image_pixels": [
+          1920,
+          840
+        ],
+        "db_range": [
+          -80,
+          0
+        ],
+        "shared_reference_db": -16.094221115112305
+      }
     },
     {
       "animal": "zebrafinch",
@@ -5131,7 +5804,27 @@
       "id": "zebra-finch-aggressive-call-12",
       "playback_gain_db": 5.848,
       "real_sha256": "f95966ca6c6c8061d205a35bced7ecc1d4e1778bedd7c427067f04bdb2bdc5f5",
-      "generated_sha256": "99010d07c49709386c4daafd9614f35fd99ef60dcc31c958fc2a200f5cbb2994"
+      "generated_sha256": "99010d07c49709386c4daafd9614f35fd99ef60dcc31c958fc2a200f5cbb2994",
+      "spectrogram_settings": {
+        "window": "hann",
+        "fft_size": 1024,
+        "hop_samples": 64,
+        "frequency_scale": "linear",
+        "frequency_limits_hz": [
+          0,
+          22050.0
+        ],
+        "time_unit": "ms",
+        "image_pixels": [
+          1920,
+          840
+        ],
+        "db_range": [
+          -80,
+          0
+        ],
+        "shared_reference_db": -14.78132438659668
+      }
     },
     {
       "animal": "zebrafinch",
@@ -5154,7 +5847,27 @@
       "id": "zebra-finch-begging-call-20",
       "playback_gain_db": 18.611,
       "real_sha256": "d696d3d775b7cf236435cd3b6ff7f4f3f869d659b4750db40ee1f564023b736b",
-      "generated_sha256": "ee0d1155be301c3d6e44dc4f5e578d8ce1fd9dec967789fe082e76c0196a5514"
+      "generated_sha256": "ee0d1155be301c3d6e44dc4f5e578d8ce1fd9dec967789fe082e76c0196a5514",
+      "spectrogram_settings": {
+        "window": "hann",
+        "fft_size": 2048,
+        "hop_samples": 128,
+        "frequency_scale": "linear",
+        "frequency_limits_hz": [
+          0,
+          22050.0
+        ],
+        "time_unit": "s",
+        "image_pixels": [
+          1920,
+          840
+        ],
+        "db_range": [
+          -80,
+          0
+        ],
+        "shared_reference_db": -22.55171012878418
+      }
     },
     {
       "animal": "zebrafinch",
@@ -5177,7 +5890,27 @@
       "id": "zebra-finch-distance-call-515",
       "playback_gain_db": 1.678,
       "real_sha256": "be9bf5ec20966fc97c110c95c91cfa2e4ae8af9ddf50c01af5c97a61a0fe11d5",
-      "generated_sha256": "eaed492125224d6821c5890416aee15e6e6594d5c8e039254bd9e8bd5251be0a"
+      "generated_sha256": "eaed492125224d6821c5890416aee15e6e6594d5c8e039254bd9e8bd5251be0a",
+      "spectrogram_settings": {
+        "window": "hann",
+        "fft_size": 1024,
+        "hop_samples": 64,
+        "frequency_scale": "linear",
+        "frequency_limits_hz": [
+          0,
+          22050.0
+        ],
+        "time_unit": "ms",
+        "image_pixels": [
+          1920,
+          840
+        ],
+        "db_range": [
+          -80,
+          0
+        ],
+        "shared_reference_db": -17.179763793945312
+      }
     },
     {
       "animal": "zebrafinch",
@@ -5200,7 +5933,27 @@
       "id": "zebra-finch-long-tonal-call-103",
       "playback_gain_db": 36.654,
       "real_sha256": "0a4cdf5f0dfbaa63feaf73e4b0adc16fd52ffa3a7758910a36529bf39d5ea2b9",
-      "generated_sha256": "762a709e0ba8ae35d32f56b9ec526d13c31289dc13fcfc99fd9c2041c479cf03"
+      "generated_sha256": "762a709e0ba8ae35d32f56b9ec526d13c31289dc13fcfc99fd9c2041c479cf03",
+      "spectrogram_settings": {
+        "window": "hann",
+        "fft_size": 1024,
+        "hop_samples": 64,
+        "frequency_scale": "linear",
+        "frequency_limits_hz": [
+          0,
+          22050.0
+        ],
+        "time_unit": "ms",
+        "image_pixels": [
+          1920,
+          840
+        ],
+        "db_range": [
+          -80,
+          0
+        ],
+        "shared_reference_db": -14.847795486450195
+      }
     },
     {
       "animal": "zebrafinch",
@@ -5223,7 +5976,27 @@
       "id": "zebra-finch-nest-call-327",
       "playback_gain_db": 24.799,
       "real_sha256": "17c48ccfd6106cba9185714fbe469c7b79f61be08ee81a5028af02e253915d87",
-      "generated_sha256": "daa6fe936e72d2f77cfdb51f690d9794e6ad81a1da42585bfa9babc1a2097326"
+      "generated_sha256": "daa6fe936e72d2f77cfdb51f690d9794e6ad81a1da42585bfa9babc1a2097326",
+      "spectrogram_settings": {
+        "window": "hann",
+        "fft_size": 512,
+        "hop_samples": 32,
+        "frequency_scale": "linear",
+        "frequency_limits_hz": [
+          0,
+          22050.0
+        ],
+        "time_unit": "ms",
+        "image_pixels": [
+          1920,
+          840
+        ],
+        "db_range": [
+          -80,
+          0
+        ],
+        "shared_reference_db": -16.84923553466797
+      }
     },
     {
       "animal": "zebrafinch",
@@ -5246,7 +6019,27 @@
       "id": "zebra-finch-tet-call-183",
       "playback_gain_db": 21.919,
       "real_sha256": "be2c5a2ed15cc3aa70faa6b75f2198c5a6a546f90cffaa69e46258f457290574",
-      "generated_sha256": "4d376ae8a9753824da19a29670329df9bb85cc4161ae9d9081429148dde91339"
+      "generated_sha256": "4d376ae8a9753824da19a29670329df9bb85cc4161ae9d9081429148dde91339",
+      "spectrogram_settings": {
+        "window": "hann",
+        "fft_size": 512,
+        "hop_samples": 32,
+        "frequency_scale": "linear",
+        "frequency_limits_hz": [
+          0,
+          22050.0
+        ],
+        "time_unit": "ms",
+        "image_pixels": [
+          1920,
+          840
+        ],
+        "db_range": [
+          -80,
+          0
+        ],
+        "shared_reference_db": -16.878732681274414
+      }
     },
     {
       "animal": "zebrafinch",
@@ -5269,7 +6062,27 @@
       "id": "zebra-finch-thuk-call-44",
       "playback_gain_db": 10.741,
       "real_sha256": "eefbc09a451d0be50e2a4e847b5d907782390a1aca3e8915961e487ee85a2deb",
-      "generated_sha256": "0e669808a162652d59f1c6410623e9352a2e04e2d428095f7712cc277c501e49"
+      "generated_sha256": "0e669808a162652d59f1c6410623e9352a2e04e2d428095f7712cc277c501e49",
+      "spectrogram_settings": {
+        "window": "hann",
+        "fft_size": 256,
+        "hop_samples": 16,
+        "frequency_scale": "linear",
+        "frequency_limits_hz": [
+          0,
+          22050.0
+        ],
+        "time_unit": "ms",
+        "image_pixels": [
+          1920,
+          840
+        ],
+        "db_range": [
+          -80,
+          0
+        ],
+        "shared_reference_db": -10.818127632141113
+      }
     },
     {
       "animal": "zebrafinch",
@@ -5292,7 +6105,27 @@
       "id": "zebra-finch-tuck-call-77",
       "playback_gain_db": 26.743,
       "real_sha256": "032e0eacf3888c248c939537392716bd68d0adb1e082d21564ae4a46e2f263f0",
-      "generated_sha256": "6662c02b07abd5f486ea1f13b24f9cd5f47a535ab2b1927b14250d1cb68861bf"
+      "generated_sha256": "6662c02b07abd5f486ea1f13b24f9cd5f47a535ab2b1927b14250d1cb68861bf",
+      "spectrogram_settings": {
+        "window": "hann",
+        "fft_size": 256,
+        "hop_samples": 16,
+        "frequency_scale": "linear",
+        "frequency_limits_hz": [
+          0,
+          22050.0
+        ],
+        "time_unit": "ms",
+        "image_pixels": [
+          1920,
+          840
+        ],
+        "db_range": [
+          -80,
+          0
+        ],
+        "shared_reference_db": -16.03629493713379
+      }
     },
     {
       "animal": "zebrafinch",
@@ -5315,7 +6148,27 @@
       "id": "zebra-finch-whine-call-54",
       "playback_gain_db": 27.909,
       "real_sha256": "6cbe660257f60c2eaab67a1d77588347a5ca5842d4af430af343d1694222c5ce",
-      "generated_sha256": "f099af7528a641a2767e689b43d1644ba76fd41becd1f1200803695c23c072bb"
+      "generated_sha256": "f099af7528a641a2767e689b43d1644ba76fd41becd1f1200803695c23c072bb",
+      "spectrogram_settings": {
+        "window": "hann",
+        "fft_size": 512,
+        "hop_samples": 32,
+        "frequency_scale": "linear",
+        "frequency_limits_hz": [
+          0,
+          22050.0
+        ],
+        "time_unit": "ms",
+        "image_pixels": [
+          1920,
+          840
+        ],
+        "db_range": [
+          -80,
+          0
+        ],
+        "shared_reference_db": -9.98003101348877
+      }
     }
   ]
 }
