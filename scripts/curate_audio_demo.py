@@ -207,33 +207,85 @@ def write_browser_audio(source, target, gain):
         sf.write(target, channels * gain, rate, subtype="PCM_16")
 
 
-def plot_spectrum(mono, common_duration, shared_reference_db, target):
+def plot_settings(animal, duration):
+    """Choose a readable display, identically for both members of a pair.
+
+    These are visualization settings, not the paper's AFDD feature extraction
+    or the fixed settings used by the showcase ranking heuristic above.
+    """
+    low_pitch = animal in {"hyena", "goat", "zebra"}
+    if duration < 0.08:
+        window = 256
+    elif duration < 0.2:
+        window = 512
+    elif duration < 0.5:
+        window = 2048 if low_pitch else 1024
+    else:
+        window = 4096 if low_pitch else 2048
+    return {
+        "window": "hann", "fft_size": window, "hop_samples": window // 16,
+        "frequency_scale": "log" if low_pitch else "linear",
+        "frequency_limits_hz": [50 if low_pitch else 0, SAMPLE_RATE / 2],
+        "time_unit": "ms" if duration < 0.5 else "s",
+        "image_pixels": [1920, 840], "db_range": [DB_MIN, DB_MAX],
+    }
+
+
+def display_stft(mono, settings):
+    window = settings["fft_size"]
+    if len(mono) < window:
+        mono = np.pad(mono, (0, window - len(mono)))
+    return signal.stft(
+        mono, fs=SAMPLE_RATE, window=settings["window"], nperseg=window,
+        noverlap=window - settings["hop_samples"], boundary="zeros", padded=True)
+
+
+def record_plot_method(report):
+    report["method"]["plot_settings"] = {
+        "description": "Duration-adaptive Hann windows and species-aware frequency axes, identical within each real/generated pair. Settings recorded per selected pair. No image smoothing or interpolation.",
+        "reference": "Joint peak STFT amplitude across the two exported playback clips",
+        "db_range": [DB_MIN, DB_MAX], "image_pixels": [1920, 840],
+        "note": "Display parameters only; fixed ranking-analysis FFT/hop and paper evaluation metrics are unchanged.",
+    }
+
+
+def plot_spectrum(mono, common_duration, shared_reference_db, target, settings):
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
-    freqs, times, values = stft(mono)
+    from matplotlib.ticker import MaxNLocator
+    freqs, times, values = display_stft(mono, settings)
     # scipy STFT uses Hann-window coherent-gain normalization. Multiply by
     # two for the positive-frequency sinusoid amplitude convention.
     db = 20 * np.log10(np.maximum(np.abs(values) * 2, 1e-12)) - shared_reference_db
-    fig, ax = plt.subplots(figsize=(9.6, 4.2), dpi=100)
+    time_factor = 1000 if settings["time_unit"] == "ms" else 1
+    fig, ax = plt.subplots(figsize=(9.6, 4.2), dpi=200)
     fig.patch.set_facecolor("#ffffff")
     ax.set_facecolor("#090b18")
-    mesh = ax.pcolormesh(times, freqs / 1000, db, cmap="magma",
+    mesh = ax.pcolormesh(times * time_factor, freqs / 1000, db, cmap="magma",
                          vmin=DB_MIN, vmax=DB_MAX, shading="auto", rasterized=True)
-    ax.set_yscale("log")
-    ax.set_ylim(0.05, SAMPLE_RATE / 2000)
-    ax.set_xlim(0, common_duration)
-    ax.set_yticks([0.1, 0.5, 1, 2, 4, 8, 16])
-    ax.set_yticklabels(["0.1", "0.5", "1", "2", "4", "8", "16"])
-    ax.set_xlabel("Time (s)", fontsize=14)
-    ax.set_ylabel("Frequency (kHz)", fontsize=14)
-    ax.tick_params(labelsize=12)
-    colorbar = fig.colorbar(mesh, ax=ax, pad=0.025, fraction=0.035)
-    colorbar.set_label("dB", fontsize=12)
+    ax.set_yscale(settings["frequency_scale"])
+    ax.set_ylim(*(np.asarray(settings["frequency_limits_hz"]) / 1000))
+    ax.set_xlim(0, common_duration * time_factor)
+    if settings["frequency_scale"] == "log":
+        ax.set_yticks([0.1, 0.5, 2, 8, 20])
+        ax.set_yticklabels(["0.1", "0.5", "2", "8", "20"])
+        ax.minorticks_off()
+    else:
+        ax.set_yticks([0, 5, 10, 15, 20])
+    ax.xaxis.set_major_locator(MaxNLocator(nbins=5, min_n_ticks=3))
+    ax.set_xlabel(f"Time ({settings['time_unit']})", fontsize=18)
+    ax.set_ylabel("Frequency (kHz)", fontsize=18)
+    ax.tick_params(labelsize=16)
+    colorbar = fig.colorbar(mesh, ax=ax, pad=0.022, fraction=0.035)
+    colorbar.set_label("dB re. pair peak", fontsize=15)
     colorbar.set_ticks([-80, -60, -40, -20, 0])
-    colorbar.ax.tick_params(labelsize=11)
-    fig.subplots_adjust(left=0.10, right=0.94, bottom=0.19, top=0.96)
-    fig.savefig(target, dpi=100, metadata={"Software": "BCAVG demo: common STFT settings, shared pair amplitude reference, fixed 80 dB range"})
+    colorbar.ax.tick_params(labelsize=14)
+    fig.subplots_adjust(left=0.11, right=0.91, bottom=0.22, top=0.96)
+    fig.savefig(target, dpi=200, metadata={
+        "Software": "BCAVG demo: Python scipy STFT / Matplotlib; no image smoothing",
+        "Description": json.dumps({**settings, "shared_reference_db": shared_reference_db}),
+    })
     plt.close(fig)
 
 
@@ -274,12 +326,14 @@ def build(args):
             _, _, real_mono = read_audio(real_target)
             _, _, gen_mono = read_audio(gen_target)
             common_duration = max(candidate["real_duration"], candidate["generated_duration"])
-            peak = max(np.abs(stft(real_mono)[2]).max(), np.abs(stft(gen_mono)[2]).max()) * 2
+            settings = plot_settings(animal, common_duration)
+            peak = max(np.abs(display_stft(real_mono, settings)[2]).max(),
+                       np.abs(display_stft(gen_mono, settings)[2]).max()) * 2
             shared_reference_db = float(20 * np.log10(max(peak, 1e-12)))
             real_plot = spectrum_root / f"{identifier}-real.png"
             gen_plot = spectrum_root / f"{identifier}-generated.png"
-            plot_spectrum(real_mono, common_duration, shared_reference_db, real_plot)
-            plot_spectrum(gen_mono, common_duration, shared_reference_db, gen_plot)
+            plot_spectrum(real_mono, common_duration, shared_reference_db, real_plot, settings)
+            plot_spectrum(gen_mono, common_duration, shared_reference_db, gen_plot, settings)
             label = candidate["label"].capitalize().replace("Mother kid", "Mother–kid")
             item = {
                 "id": identifier, "label": label, "prompt": candidate["prompt"],
@@ -296,6 +350,7 @@ def build(args):
             samples.append(item)
             selected.append({**candidate, "id": identifier,
                              "playback_gain_db": item["playbackGainDb"],
+                             "spectrogram_settings": {**settings, "shared_reference_db": shared_reference_db},
                              "real_sha256": hashlib.sha256(real_target.read_bytes()).hexdigest(),
                              "generated_sha256": hashlib.sha256(gen_target.read_bytes()).hexdigest()})
             print(f"Built {len(selected):02d}/42: {animal} / {candidate['label']} ({candidate['metrics']['selection_score']:.3f})", flush=True)
@@ -304,8 +359,36 @@ def build(args):
         "// Curated exact-ID test/final-model pairs. See data/audio-curation.json.\n"
         + "const demoSamples = " + json.dumps(data, indent=2, ensure_ascii=False) + ";\n")
     report["selected"] = selected
+    record_plot_method(report)
     args.report.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n")
     print(f"Built {len(selected)} pairs, {len(selected) * 2} spectrograms", flush=True)
+
+
+def replot(args):
+    """Redraw selected pairs only: never rerank or rewrite playback audio."""
+    report = json.loads(args.report.read_text())
+    selected = report["selected"]
+    for index, item in enumerate(selected, 1):
+        real_path = args.repo / "audio" / f"{item['id']}-real.wav"
+        gen_path = args.repo / "audio" / f"{item['id']}-generated.wav"
+        for path, hash_key in [(real_path, "real_sha256"), (gen_path, "generated_sha256")]:
+            if hashlib.sha256(path.read_bytes()).hexdigest() != item[hash_key]:
+                raise ValueError(f"Exported audio has changed: {path}")
+        _, _, real_mono = read_audio(real_path)
+        _, _, gen_mono = read_audio(gen_path)
+        duration = max(len(real_mono) / SAMPLE_RATE, len(gen_mono) / SAMPLE_RATE)
+        settings = plot_settings(item["animal"], duration)
+        peak = max(np.abs(display_stft(real_mono, settings)[2]).max(),
+                   np.abs(display_stft(gen_mono, settings)[2]).max()) * 2
+        reference = float(20 * np.log10(max(peak, 1e-12)))
+        for mono, suffix in [(real_mono, "real"), (gen_mono, "generated")]:
+            plot_spectrum(mono, duration, reference,
+                          args.repo / "spectrograms" / f"{item['id']}-{suffix}.png", settings)
+        item["spectrogram_settings"] = {**settings, "shared_reference_db": reference}
+        print(f"Redrew {index:02d}/{len(selected)}: {item['id']} "
+              f"(FFT {settings['fft_size']}, hop {settings['hop_samples']})", flush=True)
+    record_plot_method(report)
+    args.report.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n")
 
 
 def review(args):
@@ -335,16 +418,19 @@ def review(args):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument("mode", choices=["analyze", "build", "review"])
-    parser.add_argument("--manifest", type=Path, required=True)
-    parser.add_argument("--real-root", type=Path, required=True)
-    parser.add_argument("--generated-root", type=Path, required=True)
+    parser.add_argument("mode", choices=["analyze", "build", "replot", "review"])
+    parser.add_argument("--manifest", type=Path)
+    parser.add_argument("--real-root", type=Path)
+    parser.add_argument("--generated-root", type=Path)
     parser.add_argument("--repo", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--report", type=Path)
     parser.add_argument("--review-dir", type=Path, default=Path("/tmp/BCAVG-spectrogram-review"))
     args = parser.parse_args()
+    if args.mode in {"analyze", "build"} and not all(
+            [args.manifest, args.real_root, args.generated_root]):
+        parser.error("analyze/build require --manifest, --real-root and --generated-root")
     args.report = args.report or args.repo / "data/audio-curation.json"
-    {"analyze": analyze, "build": build, "review": review}[args.mode](args)
+    {"analyze": analyze, "build": build, "replot": replot, "review": review}[args.mode](args)
 
 
 if __name__ == "__main__":
