@@ -121,8 +121,8 @@
           <div>
             <h2>Listen by behavior</h2>
             <p>
-              Choose a species to see its demonstration prompt. Each example will pair a real
-              vocalization with a selected output from the final Event-Aware model.
+              Choose a species to hear a current example from the final Event-Aware model.
+              Matched real recordings will be added to the reference column.
             </p>
           </div>
         </header>
@@ -139,7 +139,7 @@
 
           <div class="sample-context">
             <div>
-              <p class="context-label">Demonstration prompt · final pairing pending</p>
+              <p class="context-label">Generation prompt · exact test manifest text</p>
               <p class="prompt-placeholder" data-prompt>A vocalization is heard from a spotted hyena when it seeks distant clan contact.</p>
             </div>
             <dl>
@@ -160,9 +160,11 @@
             <article class="audio-card proposed-card">
               <div class="audio-card-head">
                 <div><span class="model-code">B / GENERATED AUDIO</span><h3>Final Event-Aware model</h3></div>
-                <span class="status-chip">Awaiting audio</span>
+                <span class="status-chip status-ready">Listen now</span>
               </div>
-              <div class="player-unavailable">Selected final-model output not yet supplied.</div>
+              <audio class="sample-player" data-generated-audio controls preload="metadata" src="audio/hyena-whoop-generated.wav">
+                Your browser does not support audio playback.
+              </audio>
             </article>
           </div>
         </div>
@@ -170,8 +172,9 @@
         <aside class="interpretation-note">
           <span>Interpretation note</span>
           <p>
-            The real recording will be matched by species and vocalization type. A behavioral prompt does
-            not establish that the same behavior was observed in an individual reference recording.
+            The generated examples are outputs of the final Event-Aware model, but are not yet curated as
+            the best examples. Real recordings will be matched by species and vocalization type; a behavioral
+            prompt does not establish that the same behavior was observed in an individual recording.
           </p>
         </aside>
       </section>
@@ -361,6 +364,6 @@
       </div>
     </footer>
 
-    <script src="script.js?v=20261004-two-audio-v1"></script>
+    <script src="script.js?v=20261004-final-audio-v1"></script>
   </body>
 </html>

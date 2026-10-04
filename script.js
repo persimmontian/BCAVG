@@ -2,26 +2,32 @@ const species = {
   hyena: {
     name: "Spotted hyena", anchor: "Whoop",
     prompt: "A vocalization is heard from a spotted hyena when it seeks distant clan contact.",
+    audio: "audio/hyena-whoop-generated.wav",
   },
   meerkat: {
     name: "Meerkat", anchor: "Alarm call",
     prompt: "An animal sound comes from a warning meerkat when it watches for a predator.",
+    audio: "audio/meerkat-alarm-generated.wav",
   },
   marmoset: {
     name: "Common marmoset", anchor: "Phee",
     prompt: "An audible sound is heard when a marmoset reaches conspecifics outside sight.",
+    audio: "audio/marmoset-phee-generated.wav",
   },
   goat: {
     name: "Domestic goat", anchor: "Mother-kid reunion",
     prompt: "A sound occurs when a goat kid reaches its mother goat after separation.",
+    audio: "audio/goat-reunion-generated.wav",
   },
   zebra: {
     name: "Plains zebra", anchor: "Quagga quagga",
     prompt: "A vocal sound occurs while a separated plains zebra seeks contact.",
+    audio: "audio/zebra-contact-generated.wav",
   },
   "zebra-finch": {
     name: "Zebra finch", anchor: "Song",
     prompt: "An animal sound is audible while an adult male zebra finch performs courtship.",
+    audio: "audio/zebra-finch-song-generated.wav",
   },
 };
 
@@ -29,6 +35,7 @@ const tabs = [...document.querySelectorAll("[data-species]")];
 const prompt = document.querySelector("[data-prompt]");
 const speciesName = document.querySelector("[data-species-name]");
 const anchor = document.querySelector("[data-anchor]");
+const generatedAudio = document.querySelector("[data-generated-audio]");
 
 tabs.forEach((tab) => {
   tab.addEventListener("click", () => {
@@ -37,6 +44,9 @@ tabs.forEach((tab) => {
     speciesName.textContent = selected.name;
     anchor.textContent = selected.anchor;
     prompt.textContent = selected.prompt;
+    generatedAudio.pause();
+    generatedAudio.src = selected.audio;
+    generatedAudio.load();
   });
 });
 
