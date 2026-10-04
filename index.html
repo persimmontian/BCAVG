@@ -121,8 +121,8 @@
           <div>
             <h2>Listen by behavior</h2>
             <p>
-              Choose a species to hear a current example from the final Event-Aware model.
-              Matched real recordings will be added to the reference column.
+              Choose a species to compare a real test recording with its corresponding
+              final Event-Aware model output.
             </p>
           </div>
         </header>
@@ -152,9 +152,11 @@
             <article class="audio-card reference-card">
               <div class="audio-card-head">
                 <div><span class="model-code">A / REAL AUDIO</span><h3>Real vocalization</h3></div>
-                <span class="status-chip">Awaiting audio</span>
+                <span class="status-chip status-ready">Listen now</span>
               </div>
-              <div class="player-unavailable">Real recording not yet supplied.</div>
+              <audio class="sample-player" data-reference-audio controls preload="metadata" src="audio/hyena-whoop-real.wav">
+                Your browser does not support audio playback.
+              </audio>
             </article>
 
             <article class="audio-card proposed-card">
@@ -172,9 +174,9 @@
         <aside class="interpretation-note">
           <span>Interpretation note</span>
           <p>
-            The generated examples are outputs of the final Event-Aware model, but are not yet curated as
-            the best examples. Real recordings will be matched by species and vocalization type; a behavioral
-            prompt does not establish that the same behavior was observed in an individual recording.
+            Each reference is the test recording associated with the generated sample's manifest entry.
+            The prompts describe behavior associated with the vocalization category, not behavior verified
+            in an individual recording. These generated examples are not yet curated as the best examples.
           </p>
         </aside>
       </section>
@@ -364,6 +366,6 @@
       </div>
     </footer>
 
-    <script src="script.js?v=20261004-final-audio-v1"></script>
+    <script src="script.js?v=20261004-paired-audio-v1"></script>
   </body>
 </html>

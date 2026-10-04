@@ -2,31 +2,37 @@ const species = {
   hyena: {
     name: "Spotted hyena", anchor: "Whoop",
     prompt: "A vocalization is heard from a spotted hyena when it seeks distant clan contact.",
+    realAudio: "audio/hyena-whoop-real.wav",
     audio: "audio/hyena-whoop-generated.wav",
   },
   meerkat: {
     name: "Meerkat", anchor: "Alarm call",
     prompt: "An animal sound comes from a warning meerkat when it watches for a predator.",
+    realAudio: "audio/meerkat-alarm-real.wav",
     audio: "audio/meerkat-alarm-generated.wav",
   },
   marmoset: {
     name: "Common marmoset", anchor: "Phee",
     prompt: "An audible sound is heard when a marmoset reaches conspecifics outside sight.",
+    realAudio: "audio/marmoset-phee-real.wav",
     audio: "audio/marmoset-phee-generated.wav",
   },
   goat: {
     name: "Domestic goat", anchor: "Mother-kid reunion",
     prompt: "A sound occurs when a goat kid reaches its mother goat after separation.",
+    realAudio: "audio/goat-reunion-real.wav",
     audio: "audio/goat-reunion-generated.wav",
   },
   zebra: {
     name: "Plains zebra", anchor: "Quagga quagga",
     prompt: "A vocal sound occurs while a separated plains zebra seeks contact.",
+    realAudio: "audio/zebra-contact-real.wav",
     audio: "audio/zebra-contact-generated.wav",
   },
   "zebra-finch": {
     name: "Zebra finch", anchor: "Song",
     prompt: "An animal sound is audible while an adult male zebra finch performs courtship.",
+    realAudio: "audio/zebra-finch-song-real.wav",
     audio: "audio/zebra-finch-song-generated.wav",
   },
 };
@@ -35,6 +41,7 @@ const tabs = [...document.querySelectorAll("[data-species]")];
 const prompt = document.querySelector("[data-prompt]");
 const speciesName = document.querySelector("[data-species-name]");
 const anchor = document.querySelector("[data-anchor]");
+const referenceAudio = document.querySelector("[data-reference-audio]");
 const generatedAudio = document.querySelector("[data-generated-audio]");
 
 tabs.forEach((tab) => {
@@ -44,8 +51,11 @@ tabs.forEach((tab) => {
     speciesName.textContent = selected.name;
     anchor.textContent = selected.anchor;
     prompt.textContent = selected.prompt;
+    referenceAudio.pause();
     generatedAudio.pause();
+    referenceAudio.src = selected.realAudio;
     generatedAudio.src = selected.audio;
+    referenceAudio.load();
     generatedAudio.load();
   });
 });
