@@ -632,7 +632,7 @@ tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
   .hero-footer { margin-top: 28px; gap: 28px; }
   .authors .affiliations { display: block; }
   .authors .affiliations span { display: block; }
-  .hero-actions { display: grid; grid-template-columns: repeat(3, 1fr); }
+  .hero-actions { display: grid; grid-template-columns: 1fr; }
   .button { padding-inline: 10px; }
   .species-rail { grid-template-columns: repeat(3, 1fr); }
   .species-rail span { border-bottom: 1px solid var(--line); }
