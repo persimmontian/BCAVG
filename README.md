@@ -5,11 +5,12 @@ Static project page for **Behavior-Conditioned Animal Vocalization Generation: E
 ## Current state
 
 - Paper title, all six authors and four affiliations, abstract summary, dataset statistics, method summary, and reported results match the supplied final manuscript.
+- The page uses a content-first academic layout: an abstract-style project overview, one main typeface, larger body and control text, and simplified visual styling.
 - BeVo is linked at https://huggingface.co/datasets/Xinghour/BeVo. Paper and model-code buttons are retained as disabled placeholders; their links will be added later.
 - Results reproduce the full overall table, including the Real Reference and both language-aligned fidelity metrics. Optional tables show dataset splits and species-wise results. The conditioning summary includes macro accuracy, mAP, and the target-probability increase rate; the 85.39% rate is not an accuracy improvement.
 - The method panel includes the training and inference settings: 400 epochs, batch size 64, AdamW at 1e-5, 50 generation steps, guidance scale 4.5, and target duration from the corresponding real test recording.
 - The supplied dataset overview, Event-Aware modeling figure, and AnimalCLAP t-SNE figure are included.
-- The listening panel contains 42 matched test-recording/final-model pairs: hyena (8 condition labels), meerkat (6), marmoset (6), goat (8), zebra (4), and zebra finch (10).
+- The listening panel contains 42 matched test-recording/final-model pairs, ordered as goat (8 condition labels), meerkat (6), zebra (4), zebra finch (10), marmoset (6), and hyena (8). Goat is selected by default.
 - Species and condition-label tabs show the selected sample's exact test-manifest prompt. There are only two systems: real reference and final Event-Aware generation, with no old-baseline listening slots.
 - Generated WAV files come from `outputs/test_inference`; the inference script uses the trained `outputs/all_animals/checkpoints/best.safetensors` checkpoint. Its generic `finetuned_checkpoint` argument does not mean these are the separate fine-tuned baseline results in the paper's comparison table.
 - Real WAV files come from the corresponding exact-ID paths under `last_data/test/`, not the training split. Both members of each pair are exported as browser-compatible PCM16 WAVs. The same gain is applied to both, bringing their joint sample peak to -3 dBFS for comfortable playback while preserving their relative level. Source files are unchanged; no cropping, time stretching, filtering, or independent normalization is applied.
