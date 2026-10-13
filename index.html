@@ -66,32 +66,6 @@
             <span class="hero-title-tail">Event-Aware Modeling and Multidimensional Evaluation</span>
           </h1>
 
-          <div class="hero-deck">
-            <div class="hero-summary" aria-label="Project overview">
-              <p>
-            We investigate behavior-conditioned animal vocalization generation: synthesizing animal calls from
-            natural-language descriptions of behaviors, social interactions, and contexts. To address limited
-            behavioral text supervision and substantial variation in vocalization duration, we construct the
-            Behavior-Vocalization Dataset (BeVo), linking 31,191 vocalization events from six species with
-            literature-grounded behavioral conditions. We adapt TangoFlux with Event-Aware variable-length
-            modeling, encoding each vocalization at its actual duration and excluding padded latent positions
-            from attention and the training loss.
-          </p>
-              <p>
-            We evaluate vocalization discriminability, acoustic distribution fidelity, and language-aligned
-            representation fidelity. Compared with standard fine-tuning, Event-Aware modeling improves
-            vocalization-anchor macro accuracy from 59.86% to 61.99% and reduces Fréchet Audio Distance
-            from 1.40 to 1.22. This demo presents paired real recordings and generated samples, organized by
-            species and conditioning label, with the corresponding prompts and spectrograms.
-          </p>
-            </div>
-            <ol class="hero-contributions" aria-label="Main contributions">
-              <li><span>01</span>BeVo dataset</li>
-              <li><span>02</span>Event-Aware generation</li>
-              <li><span>03</span>Multidimensional evaluation</li>
-            </ol>
-          </div>
-
           <div class="hero-footer">
             <div class="authors" aria-label="Authors">
               <p>Xinlong Deng<sup>1*</sup>, Yong Tian<sup>1*</sup>, Jian Guan<sup>2</sup>, Qiuqiang Kong<sup>3</sup>, Jie Jiang<sup>1</sup>, Yin Cao<sup>4</sup></p>
@@ -117,6 +91,32 @@
               <button class="button button-secondary" type="button" disabled title="Code link will be added later">Code <span>GitHub</span></button>
               <a class="button button-secondary" href="https://huggingface.co/datasets/Xinghour/BeVo" target="_blank" rel="noopener">Dataset <span>BeVo</span></a>
             </div>
+          </div>
+
+          <div class="hero-deck">
+            <div class="hero-summary" aria-label="Project overview">
+              <p>
+            We investigate behavior-conditioned animal vocalization generation: synthesizing animal calls from
+            natural-language descriptions of behaviors, social interactions, and contexts. To address limited
+            behavioral text supervision and substantial variation in vocalization duration, we construct the
+            Behavior-Vocalization Dataset (BeVo), linking 31,191 vocalization events from six species with
+            literature-grounded behavioral conditions. We adapt TangoFlux with Event-Aware variable-length
+            modeling, encoding each vocalization at its actual duration and excluding padded latent positions
+            from attention and the training loss.
+          </p>
+              <p>
+            We evaluate vocalization discriminability, acoustic distribution fidelity, and language-aligned
+            representation fidelity. Compared with standard fine-tuning, Event-Aware modeling improves
+            vocalization-anchor macro accuracy from 59.86% to 61.99% and reduces Fréchet Audio Distance
+            from 1.40 to 1.22. This demo presents paired real recordings and generated samples, organized by
+            species and conditioning label, with the corresponding prompts and spectrograms.
+          </p>
+            </div>
+            <ol class="hero-contributions" aria-label="Main contributions">
+              <li><span>01</span>BeVo dataset</li>
+              <li><span>02</span>Event-Aware generation</li>
+              <li><span>03</span>Multidimensional evaluation</li>
+            </ol>
           </div>
         </div>
 
