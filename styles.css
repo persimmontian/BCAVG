@@ -732,3 +732,203 @@ tbody tr:last-child th, tbody tr:last-child td { border-bottom: 0; }
   font-size: 14px !important;
   font-weight: 400 !important;
 }
+
+/* Consistent academic type scale and alignment; retain the existing theme and demos. */
+:root {
+  --type-title: 42px;
+  --type-section: 32px;
+  --type-card: 20px;
+  --type-body: 17px;
+  --type-label: 15px;
+  --type-note: 14px;
+}
+body { font-size: var(--type-body); line-height: 1.65; }
+.hero h1, .section-heading h2, .citation-layout h2,
+.prompt-placeholder, .abstract-copy .lead-paragraph,
+.stats-grid strong, .metric-grid strong,
+.conditioning-card h3, .embedding-figure h3,
+.hero-contributions span, .contribution-list span,
+.species-inventory span, .method-steps span, .scope-grid span {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.brand { font-size: 17px; letter-spacing: 0.04em; }
+.brand small, .resource-pending, .resource-link { font-size: var(--type-note); letter-spacing: 0.02em; }
+.brand small, .resource-pending { color: var(--muted); }
+.desktop-nav a, .mobile-nav a { font-size: var(--type-label); font-weight: 600; }
+.hero { padding-top: 40px; }
+.hero-meta-line { justify-content: center; padding-bottom: 20px; }
+.eyebrow, .section-index, .card-kicker {
+  font-size: var(--type-note);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.hero-copy { padding-block: 30px 36px; }
+.hero h1 {
+  max-width: 1040px;
+  margin-inline: auto;
+  font-size: var(--type-title);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  text-align: center;
+  text-wrap: balance;
+}
+.hero h1 span { display: inline; }
+.hero h1 .hero-title-tail {
+  display: block;
+  margin-top: 14px;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.35;
+}
+.hero-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  margin-top: 26px;
+}
+.authors { width: 100%; max-width: 1100px; text-align: center; }
+.authors > p:first-child { font-size: 18px; line-height: 1.6; }
+.authors .affiliations, .authors .author-contacts { font-size: 16px; line-height: 1.6; }
+.authors .author-contacts { text-wrap: balance; }
+.hero-actions { display: flex; justify-content: center; gap: 12px; }
+.button { min-height: 44px; padding-inline: 20px; font-size: 16px; font-weight: 600; letter-spacing: 0; }
+.button span { font-size: var(--type-note); }
+.hero-deck { display: block; max-width: 860px; margin: 36px auto 0; }
+.hero-summary { max-width: 860px; font-size: var(--type-body); line-height: 1.75; text-align: left; }
+.hero-summary h2 {
+  margin: 0 0 18px;
+  font-size: var(--type-section);
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+}
+.hero-contributions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 24px;
+}
+.hero-contributions li {
+  grid-template-columns: 26px 1fr;
+  min-height: 48px;
+  font-size: var(--type-label);
+  font-weight: 600;
+  text-align: left;
+}
+.hero-contributions span { font-size: var(--type-note); }
+.species-rail span { font-size: var(--type-label); font-weight: 600; }
+.stats-grid div { text-align: center; }
+.stats-grid div:first-child { padding-left: 30px; }
+.stats-grid strong, .metric-grid strong { font-size: 32px; font-weight: 700; letter-spacing: -0.01em; line-height: 1.2; }
+.stats-grid span { font-size: var(--type-note); font-weight: 500; letter-spacing: 0.02em; }
+.content-section { padding-block: 64px; }
+.section-heading { display: block; margin-bottom: 30px; text-align: center; }
+.section-heading .section-index { margin-bottom: 8px; }
+.section-heading h2, .citation-layout h2 {
+  max-width: 1000px;
+  margin-inline: auto;
+  font-size: var(--type-section);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+.section-heading > div > p {
+  max-width: 900px;
+  margin: 14px auto 0;
+  font-size: var(--type-body);
+  line-height: 1.65;
+  text-align: left;
+}
+.species-tabs button, .anchor-buttons button {
+  font-size: var(--type-label);
+  font-weight: 600;
+}
+.anchor-buttons button { min-height: 40px; }
+.context-label, .model-code, .sample-context dt {
+  font-size: var(--type-note);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+.anchor-count, .sample-context dd { font-size: var(--type-label); }
+.prompt-placeholder { font-size: var(--type-card); font-weight: 600; letter-spacing: 0; line-height: 1.5; }
+.sample-context { gap: 28px; }
+.comparison-tools { flex-wrap: wrap; }
+.comparison-tools p, .spectrogram-toggle, .audio-duration,
+.sample-spectrogram figcaption, .figure-card figcaption, .method-figure figcaption {
+  font-size: var(--type-note);
+  line-height: 1.5;
+}
+.context-label, .model-code, .sample-context dt, .anchor-count,
+.comparison-tools p, .audio-duration, .sample-spectrogram figcaption,
+.figure-card figcaption, .method-figure figcaption,
+.species-inventory span, .species-inventory p,
+.metric-grid small, .card-title small, .detail-table summary small, .table-note {
+  color: #58645d;
+}
+.audio-card h3, .contribution-list h3, .method-steps h3,
+.conditioning-card h3, .embedding-figure h3, .scope-grid h3 {
+  font-size: var(--type-card);
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.4;
+}
+.audio-card-head { justify-content: center; text-align: center; }
+.sample-player { max-width: none; }
+.audio-duration, .sample-spectrogram figcaption { text-align: center; }
+.interpretation-note { grid-template-columns: 180px minmax(0, 1fr); }
+.interpretation-note span { font-size: var(--type-note); font-weight: 600; letter-spacing: 0.03em; }
+.interpretation-note p { font-size: var(--type-label); line-height: 1.65; }
+.abstract-copy p, .abstract-copy .lead-paragraph { font-size: var(--type-body); line-height: 1.7; letter-spacing: 0; }
+.contribution-list p, .method-steps p, .scope-grid p,
+.experimental-setup > p:last-child, .conditioning-card > p:last-child,
+.embedding-figure .figure-copy > p:last-child { font-size: var(--type-body); line-height: 1.65; }
+.contribution-list article { grid-template-columns: 26px minmax(0, 1fr); }
+.contribution-list p { grid-column: 2; }
+.contribution-list span, .species-inventory span, .method-steps span, .scope-grid span { font-size: var(--type-note); }
+.species-inventory h3 { font-size: var(--type-body); line-height: 1.4; }
+.species-inventory p { font-size: var(--type-label); }
+.setup-grid dt, .metric-grid p { font-size: var(--type-note); letter-spacing: 0.02em; }
+.setup-grid dd { font-size: var(--type-body); line-height: 1.5; }
+.metric-grid small, .mini-comparison span, .mini-comparison small { font-size: var(--type-note); line-height: 1.5; }
+.mini-comparison strong { font-size: 28px; line-height: 1.3; }
+.card-title, .detail-table summary { font-size: var(--type-label); font-weight: 600; }
+.card-title { flex-wrap: wrap; padding-block: 12px; gap: 6px 14px; }
+.card-title small, .detail-table summary small, .table-note { font-size: var(--type-note); line-height: 1.6; }
+th, td, thead th { font-size: var(--type-note); letter-spacing: 0; }
+thead th { color: #58645d; text-transform: none; }
+.reference-row { color: var(--muted); }
+.results-table th, .results-table td { padding: 12px 10px; }
+.table-note { text-align: left; }
+.citation-layout { display: block; }
+.citation-layout > div:first-child { margin-bottom: 28px; text-align: center; }
+.citation-layout > div:first-child > p:last-child { font-size: var(--type-label); }
+.citation-card { max-width: 1040px; margin-inline: auto; text-align: left; }
+.citation-card pre { font-size: var(--type-note); }
+.copy-button, .copy-status, .footer-grid p { font-size: var(--type-note); }
+.footer-grid { justify-content: center; text-align: center; }
+@media (max-width: 760px) {
+  :root { --type-title: 30px; --type-section: 27px; }
+  .hero { padding-top: 28px; }
+  .hero-copy { padding-block: 24px 30px; }
+  .hero h1 { font-size: var(--type-title); line-height: 1.25; }
+  .hero h1 .hero-title-tail { font-size: 23px; line-height: 1.35; margin-top: 12px; }
+  .hero-footer { gap: 20px; }
+  .hero-actions { display: flex; flex-wrap: wrap; justify-content: center; }
+  .hero-contributions { grid-template-columns: 1fr; gap: 0; margin-top: 20px; }
+  .content-section { padding-block: 48px; }
+  .section-heading h2 { font-size: var(--type-section); }
+  .section-heading > div > p { font-size: var(--type-body); }
+  .sample-context dd { font-size: var(--type-label); }
+  .comparison-tools p { max-width: none; }
+  .interpretation-note { grid-template-columns: 1fr; }
+  .audio-card-head { display: flex; }
+  .metric-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stats-grid div, .stats-grid div:first-child { padding-inline: 10px; }
+  .stats-grid strong, .metric-grid strong { font-size: 28px; }
+  .stats-grid span { font-size: var(--type-note); }
+  .citation-card pre { font-size: var(--type-note); }
+  .footer-grid { align-items: center; }
+}
