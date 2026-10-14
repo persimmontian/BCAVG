@@ -6,7 +6,7 @@ Static project page for **Behavior-Conditioned Animal Vocalization Generation: E
 
 - Paper title, all six authors and four affiliations, abstract summary, dataset statistics, method summary, and reported results match the supplied final manuscript.
 - The page retains the earlier project-page color theme and demo modules, with a consistent sans-serif type scale and centered paper information and section headings. The expanded introduction, plain-text author emails, and current audio order are preserved. Email typography matches the affiliations, and the equal-contribution note appears below the emails.
-- BeVo is linked at https://huggingface.co/datasets/Xinghour/BeVo. Paper and model-code buttons are retained as disabled placeholders; their links will be added later.
+- The Paper button links to https://arxiv.org/abs/2610.16382, and the Citation section uses its official arXiv BibTeX. BeVo is linked at https://huggingface.co/datasets/Xinghour/BeVo. The model-code button remains a disabled placeholder.
 - Results reproduce the full overall table, including the Real Reference and both language-aligned fidelity metrics. Optional tables show dataset splits and species-wise results. The conditioning summary includes macro accuracy, mAP, and the target-probability increase rate; the 85.39% rate is not an accuracy improvement.
 - The method panel includes the training and inference settings: 400 epochs, batch size 64, AdamW at 1e-5, 50 generation steps, guidance scale 4.5, and target duration from the corresponding real test recording.
 - The supplied dataset overview, Event-Aware modeling figure, and AnimalCLAP t-SNE figure are included.
